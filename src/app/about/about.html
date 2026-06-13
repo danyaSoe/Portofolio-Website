@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SYS_PORTFOLIO_V1.0 | ABOUT_ME</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;600;700&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#121414",
+                    "on-primary-fixed-variant": "#0c5300",
+                    "tertiary": "#ffefef",
+                    "on-surface-variant": "#bbccb0",
+                    "on-secondary-fixed-variant": "#683d00",
+                    "on-tertiary-fixed": "#301216",
+                    "surface-tint": "#34e507",
+                    "surface-container-high": "#282a2b",
+                    "secondary": "#ffb86b",
+                    "inverse-surface": "#e2e2e2",
+                    "tertiary-container": "#ffc9cd",
+                    "outline-variant": "#3c4b36",
+                    "secondary-container": "#ed9000",
+                    "on-primary-container": "#136c00",
+                    "inverse-primary": "#136e00",
+                    "bg-surface": "#15181E",
+                    "secondary-fixed": "#ffdcbc",
+                    "background": "#121414",
+                    "surface-container": "#1e2020",
+                    "inverse-on-surface": "#2f3131",
+                    "on-secondary-fixed": "#2c1700",
+                    "on-surface": "#e2e2e2",
+                    "on-tertiary-container": "#7b5256",
+                    "text-muted": "#B8B8B8",
+                    "on-tertiary-fixed-variant": "#623c40",
+                    "surface-container-low": "#1a1c1c",
+                    "error": "#ffb4ab",
+                    "on-secondary-container": "#583300",
+                    "on-primary": "#063900",
+                    "on-tertiary": "#48272a",
+                    "surface-dim": "#121414",
+                    "surface-container-highest": "#333535",
+                    "border-subtle": "#30363D",
+                    "primary-fixed-dim": "#34e507",
+                    "on-error-container": "#ffdad6",
+                    "tertiary-fixed": "#ffdadc",
+                    "primary": "#d4ffc1",
+                    "surface-bright": "#38393a",
+                    "on-primary-fixed": "#022100",
+                    "on-error": "#690005",
+                    "outline": "#86957d",
+                    "on-background": "#e2e2e2",
+                    "secondary-fixed-dim": "#ffb86b",
+                    "glow-green": "rgba(74, 246, 38, 0.25)",
+                    "surface-container-lowest": "#0c0f0f",
+                    "primary-container": "#4af626",
+                    "error-container": "#93000a",
+                    "bg-main": "#0B0C0F",
+                    "on-secondary": "#492900",
+                    "primary-fixed": "#79ff59",
+                    "surface-variant": "#333535",
+                    "tertiary-fixed-dim": "#eeb9bd"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "section-gap": "120px",
+                    "section-gap-mobile": "64px",
+                    "gutter": "24px",
+                    "container-padding": "16px",
+                    "max-width": "1200px"
+            },
+            "fontFamily": {
+                    "code-md": ["JetBrains Mono"],
+                    "body-md": ["Inter"],
+                    "label-sm": ["JetBrains Mono"],
+                    "display-lg": ["IBM Plex Mono"],
+                    "headline-md": ["IBM Plex Mono"],
+                    "body-lg": ["Inter"],
+                    "display-lg-mobile": ["IBM Plex Mono"]
+            },
+            "fontSize": {
+                    "code-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-sm": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #121414;
+            color: #e2e2e2;
+            overflow-x: hidden;
+        }
+
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to bottom,
+                rgba(18, 16, 16, 0) 50%,
+                rgba(0, 0, 0, 0.25) 50%
+            );
+            background-size: 100% 4px;
+            z-index: 100;
+            pointer-events: none;
+        }
+
+        .crt-flicker {
+            animation: flicker 0.15s infinite;
+        }
+
+        @keyframes flicker {
+            0% { opacity: 0.97; }
+            100% { opacity: 1; }
+        }
+
+        .glow-green {
+            box-shadow: 0 0 15px rgba(52, 229, 7, 0.4);
+        }
+
+        .skill-bar-fill {
+            background-color: #34e507;
+            box-shadow: 0 0 8px rgba(52, 229, 7, 0.8);
+        }
+
+        .terminal-window {
+            border: 1px solid #3c4b36;
+            background: rgba(21, 24, 30, 0.8);
+            backdrop-filter: blur(4px);
+        }
+
+        .terminal-header {
+            background: #1e2020;
+            border-bottom: 1px solid #3c4b36;
+        }
+
+        .cursor-blink {
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            from, to { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .pixel-grid {
+            background-image: radial-gradient(#3c4b36 0.5px, transparent 0.5px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="font-body-md selection:bg-surface-tint selection:text-surface">
+<div class="scanlines"></div>
+<div class="pixel-grid fixed inset-0 opacity-10 pointer-events-none"></div>
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant">
+<nav class="flex justify-between items-center w-full px-gutter max-w-max-width mx-auto h-16">
+<div class="text-headline-md font-headline-md font-bold text-surface-tint tracking-tighter">
+                SYS_PORTFOLIO_V1.0
+            </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant font-medium hover:text-surface-tint transition-all duration-150" href="#">root</a>
+<a class="text-surface-tint font-bold border-b-2 border-surface-tint pb-1" href="#">about</a>
+<a class="text-on-surface-variant font-medium hover:text-surface-tint transition-all duration-150" href="#">projects</a>
+<a class="text-on-surface-variant font-medium hover:text-surface-tint transition-all duration-150" href="#">history</a>
+<a class="text-on-surface-variant font-medium hover:text-surface-tint transition-all duration-150" href="#">contact</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-surface-tint">terminal</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-surface-tint">settings</button>
+</div>
+</nav>
+</header>
+<main class="pt-32 pb-section-gap px-gutter max-w-max-width mx-auto">
+<!-- Hero Section / Identity -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center mb-section-gap">
+<div class="md:col-span-5 relative group">
+<div class="absolute -inset-2 bg-surface-tint/20 rounded-lg blur-lg group-hover:bg-surface-tint/30 transition-all duration-500"></div>
+<div class="relative terminal-window p-1 rounded-lg overflow-hidden border-2 border-surface-tint/50 shadow-2xl">
+<img alt="Danya Damaris" class="w-full h-auto grayscale hover:grayscale-0 transition-all duration-500 rounded-sm" src="https://lh3.googleusercontent.com/aida/AP1WRLtJrmfTYgh4UqbnAK2IJckWULaErbHDi391aRlemcyYQC2Y9NrzbDPaqrGq18JgP-m0trDtWcEz5Vb95WoLbAydDP2QSvgELZaAs-7m-oM8ytjOweKufgQiBBPMb4x_oHkUbOw1PbkfMw4qQwWd8PYjdI7EF2Pl-14EwJ0mBZErgqV-9Lvt6ZZEY2aMQUKw1UFtGvdTFBknCMtAEyHb8Jlou_jroFSTBnGhcevApONrlMCAfzhS_HU6aMY"/>
+<div class="absolute bottom-4 left-4 right-4 py-2 px-3 bg-surface/90 border border-surface-tint/30 backdrop-blur-md rounded">
+<p class="font-code-md text-label-sm text-surface-tint">ID: DAMARIS_DANYA_IE_STU</p>
+</div>
+</div>
+</div>
+<div class="md:col-span-7">
+<div class="flex items-center gap-3 mb-4">
+<span class="w-3 h-3 rounded-full bg-surface-tint glow-green"></span>
+<span class="font-code-md text-label-sm text-surface-tint uppercase tracking-widest">System Profile Loaded</span>
+</div>
+<h1 class="font-display-lg text-display-lg md:text-display-lg mb-6 leading-tight">
+                    Engineering <span class="text-surface-tint">Architectural</span> Solutions for the Future.
+                </h1>
+<div class="terminal-window p-6 rounded-lg border-l-4 border-l-surface-tint">
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6 leading-relaxed">
+                        &gt; I am Danya Damaris, a second year information systems and technology student working on my interests and trying to broaden my horizons.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="px-6 py-2 terminal-window font-code-md text-label-sm hover:text-surface-tint hover:glow-green transition-all duration-150 active:scale-95 group">
+                            INIT_CHAT <span class="material-symbols-outlined align-middle ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<button class="px-6 py-2 font-code-md text-label-sm text-on-surface-variant hover:text-surface-tint underline underline-offset-8 transition-colors">
+                            DOWNLOAD_CV_V2.PDF
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Professional Narrative / Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-section-gap">
+<div class="md:col-span-2 terminal-window p-8 rounded-lg relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-[120px]">architecture</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-surface-tint mb-4">0x01: Philosophy</h3>
+<p class="text-on-surface-variant leading-relaxed mb-6">
+                    Technology isn't just a tool; it's a medium for architectural excellence. I believe in writing code that is self-documenting, systems that are resilient by default, and interfaces that respect the user's intelligence. My work is heavily influenced by the modularity of Unix and the tactile feedback of legacy hardware.
+                </p>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 bg-surface-container-low border border-outline-variant rounded">
+<h4 class="font-code-md text-label-sm text-on-surface mb-2">MODULARITY</h4>
+<div class="w-full h-1 bg-outline-variant rounded-full overflow-hidden">
+<div class="h-full w-[95%] bg-surface-tint"></div>
+</div>
+</div>
+<div class="p-4 bg-surface-container-low border border-outline-variant rounded">
+<h4 class="font-code-md text-label-sm text-on-surface mb-2">PRECISION</h4>
+<div class="w-full h-1 bg-outline-variant rounded-full overflow-hidden">
+<div class="h-full w-[88%] bg-surface-tint"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="terminal-window p-8 rounded-lg bg-surface-tint/[0.03]">
+<h3 class="font-headline-md text-headline-md text-surface-tint mb-4">0x02: Focus</h3>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-surface-tint mt-1" data-weight="fill">check_circle</span>
+<div>
+<span class="font-code-md text-on-surface">Cloud Scalability</span>
+<p class="text-label-sm text-on-surface-variant">Kubernetes &amp; AWS native solutions</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-surface-tint mt-1" data-weight="fill">check_circle</span>
+<div>
+<span class="font-code-md text-on-surface">Interactive UX</span>
+<p class="text-label-sm text-on-surface-variant">Three.js &amp; WebGL experiences</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-surface-tint mt-1" data-weight="fill">check_circle</span>
+<div>
+<span class="font-code-md text-on-surface">Open Source</span>
+<p class="text-label-sm text-on-surface-variant">Core contributor to rust-lang libs</p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+<!-- Skills Matrix Terminal -->
+<section class="mb-section-gap">
+<div class="terminal-window rounded-lg overflow-hidden shadow-2xl">
+<div class="terminal-header h-10 px-4 flex items-center justify-between">
+<div class="flex gap-2">
+<div class="w-3 h-3 rounded-full bg-error/40 border border-error/60"></div>
+<div class="w-3 h-3 rounded-full bg-secondary/40 border border-secondary/60"></div>
+<div class="w-3 h-3 rounded-full bg-surface-tint/40 border border-surface-tint/60"></div>
+</div>
+<div class="font-code-md text-label-sm text-on-surface-variant">root@sys_rivera: ~/skills_matrix</div>
+<div class="w-12"></div>
+</div>
+<div class="p-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+<!-- Core Engineering -->
+<div>
+<h3 class="font-headline-md text-headline-md mb-8 flex items-center gap-3">
+<span class="material-symbols-outlined text-surface-tint">developer_board</span>
+                            CORE_STACK
+                        </h3>
+<div class="space-y-8">
+<div class="skill-row">
+<div class="flex justify-between font-code-md text-label-sm mb-2">
+<span>RUST / WEB_ASSEMBLY</span>
+<span class="text-surface-tint">94%</span>
+</div>
+<div class="w-full h-4 bg-surface-container-highest border border-outline-variant p-0.5 rounded-sm">
+<div class="h-full skill-bar-fill w-[94%]"></div>
+</div>
+<div class="mt-1 font-code-md text-[10px] text-on-surface-variant tracking-tighter">██████████████████████████████░░</div>
+</div>
+<div class="skill-row">
+<div class="flex justify-between font-code-md text-label-sm mb-2">
+<span>TYPESCRIPT / REACT / NEXT</span>
+<span class="text-surface-tint">98%</span>
+</div>
+<div class="w-full h-4 bg-surface-container-highest border border-outline-variant p-0.5 rounded-sm">
+<div class="h-full skill-bar-fill w-[98%]"></div>
+</div>
+<div class="mt-1 font-code-md text-[10px] text-on-surface-variant tracking-tighter">████████████████████████████████</div>
+</div>
+<div class="skill-row">
+<div class="flex justify-between font-code-md text-label-sm mb-2">
+<span>PYTHON / FAST_API</span>
+<span class="text-surface-tint">82%</span>
+</div>
+<div class="w-full h-4 bg-surface-container-highest border border-outline-variant p-0.5 rounded-sm">
+<div class="h-full skill-bar-fill w-[82%]"></div>
+</div>
+<div class="mt-1 font-code-md text-[10px] text-on-surface-variant tracking-tighter">██████████████████████████░░░░░░</div>
+</div>
+</div>
+</div>
+<!-- Visuals & Ops -->
+<div>
+<h3 class="font-headline-md text-headline-md mb-8 flex items-center gap-3">
+<span class="material-symbols-outlined text-surface-tint">brush</span>
+                            INFRA_VISUALS
+                        </h3>
+<div class="space-y-8">
+<div class="skill-row">
+<div class="flex justify-between font-code-md text-label-sm mb-2">
+<span>WEBGL / THREE_JS / SHADERS</span>
+<span class="text-surface-tint">88%</span>
+</div>
+<div class="w-full h-4 bg-surface-container-highest border border-outline-variant p-0.5 rounded-sm">
+<div class="h-full skill-bar-fill w-[88%]"></div>
+</div>
+<div class="mt-1 font-code-md text-[10px] text-on-surface-variant tracking-tighter">████████████████████████████░░░░</div>
+</div>
+<div class="skill-row">
+<div class="flex justify-between font-code-md text-label-sm mb-2">
+<span>KUBERNETES / TERRAFORM</span>
+<span class="text-surface-tint">85%</span>
+</div>
+<div class="w-full h-4 bg-surface-container-highest border border-outline-variant p-0.5 rounded-sm">
+<div class="h-full skill-bar-fill w-[85%]"></div>
+</div>
+<div class="mt-1 font-code-md text-[10px] text-on-surface-variant tracking-tighter">███████████████████████████░░░░░</div>
+</div>
+<div class="skill-row">
+<div class="flex justify-between font-code-md text-label-sm mb-2">
+<span>POSTGRES / REDIS / VECTOR_DB</span>
+<span class="text-surface-tint">91%</span>
+</div>
+<div class="w-full h-4 bg-surface-container-highest border border-outline-variant p-0.5 rounded-sm">
+<div class="h-full skill-bar-fill w-[91%]"></div>
+</div>
+<div class="mt-1 font-code-md text-[10px] text-on-surface-variant tracking-tighter">█████████████████████████████░░░</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Passion & Hobbies / Cards -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="space-y-6">
+<div class="flex items-center gap-2 text-surface-tint mb-4">
+<span class="material-symbols-outlined">psychology</span>
+<h2 class="font-headline-md text-headline-md">PROBLEM_SOLVING</h2>
+</div>
+<p class="font-body-md text-on-surface-variant leading-relaxed">
+                    Beyond coding, I am an avid enthusiast of mathematical logic and algorithmic challenges. I spend significant time exploring the intersection of creative coding and real-time visualization. My downtime is often occupied by modular synthesizers—patching cables to generate complex, evolving sonic landscapes that mirror the complexity of software systems.
+                </p>
+<div class="p-6 terminal-window bg-surface-container-low rounded-lg border-dashed border-2 border-outline-variant">
+<p class="font-code-md text-label-sm italic text-on-surface-variant">
+                        "The best code is not just functional; it is intentional. Every byte should serve a purpose in the larger architecture of the system."
+                    </p>
+</div>
+</div>
+<div class="relative h-full min-h-[300px] terminal-window rounded-lg overflow-hidden">
+<img alt="Retro hardware setup" class="w-full h-full object-cover opacity-40 grayscale group-hover:opacity-60 transition-opacity" data-alt="A close-up, high-detail photograph of vintage 1980s computer hardware and modular synthesizer equipment. The lighting is low-key with intense neon green accents reflecting off brushed metallic surfaces and glass screen monitors. The aesthetic is dark, technical, and atmospheric, evoking a retro-futuristic laboratory feel. The shot focuses on the intricate circuitry, glowing LEDs, and analog cables connecting the devices." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkGjkwi1tOtNHH3nPjqKNqP6jSJ_pexh1VNPELYlzfpT_60UFOg-tTgFacqdNdj8y0jYWC0Q2XsWyO8N2HAFjIf2geQchW_nltYK6VPRQXzJxcQAl3b4LLcWBIjPETXpjJH1yyG-Zjjd1G0exS4NFrWMvwvwkKXSuGoKYMlicPbzfdz5M4y06YiHtPrjKm3XTV8db-8zfDZL15OerKbNDQ7e1FdHtvB0AUIV5Own3gRTWRX6VHxdCB1SKbTT4Db0IaOCie3UKJTuM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6">
+<h4 class="font-headline-md text-headline-md text-surface-tint mb-1">INTERESTS_ARRAY</h4>
+<div class="flex gap-4 font-code-md text-label-sm text-on-surface-variant">
+<span>#SYNTHS</span>
+<span>#CRT_MODS</span>
+<span>#OS_DEV</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="w-full py-8 border-t border-outline-variant mt-section-gap bg-surface dark:bg-surface">
+<div class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-max-width mx-auto gap-4">
+<div class="text-label-sm font-label-sm text-surface-tint">
+                © 2024 TERMINAL_SYSTEMS. ALL RIGHTS RESERVED.
+            </div>
+<div class="flex gap-6 items-center">
+<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors text-code-md font-code-md" href="#">github</a>
+<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors text-code-md font-code-md" href="#">linkedin</a>
+<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors text-code-md font-code-md" href="#">source_code</a>
+</div>
+<div class="font-code-md text-[10px] text-outline-variant animate-pulse">
+                Uptime: 234.12.05.02
+            </div>
+</div>
+</footer>
+<script>
+        // Interactive cursor effect for terminal feel
+        document.addEventListener('mousemove', (e) => {
+            const glow = document.createElement('div');
+            glow.className = 'fixed pointer-events-none w-32 h-32 rounded-full opacity-5 bg-surface-tint blur-3xl z-[99]';
+            glow.style.left = e.clientX - 64 + 'px';
+            glow.style.top = e.clientY - 64 + 'px';
+            document.body.appendChild(glow);
+            setTimeout(() => glow.remove(), 100);
+        });
+
+        // Add scanline scroll effect
+        window.addEventListener('scroll', () => {
+            const scanlines = document.querySelector('.scanlines');
+            const offset = window.scrollY / 2;
+            scanlines.style.backgroundPositionY = offset + 'px';
+        });
+    </script>
+</body></html>

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SYS_PORTFOLIO_V1.0 | Projects</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#121414",
+                        "on-primary-fixed-variant": "#0c5300",
+                        "tertiary": "#ffefef",
+                        "on-surface-variant": "#bbccb0",
+                        "on-secondary-fixed-variant": "#683d00",
+                        "on-tertiary-fixed": "#301216",
+                        "surface-tint": "#34e507",
+                        "surface-container-high": "#282a2b",
+                        "secondary": "#ffb86b",
+                        "inverse-surface": "#e2e2e2",
+                        "tertiary-container": "#ffc9cd",
+                        "outline-variant": "#3c4b36",
+                        "secondary-container": "#ed9000",
+                        "on-primary-container": "#136c00",
+                        "inverse-primary": "#136e00",
+                        "bg-surface": "#15181E",
+                        "secondary-fixed": "#ffdcbc",
+                        "background": "#121414",
+                        "surface-container": "#1e2020",
+                        "inverse-on-surface": "#2f3131",
+                        "on-secondary-fixed": "#2c1700",
+                        "on-surface": "#e2e2e2",
+                        "on-tertiary-container": "#7b5256",
+                        "text-muted": "#B8B8B8",
+                        "on-tertiary-fixed-variant": "#623c40",
+                        "surface-container-low": "#1a1c1c",
+                        "error": "#ffb4ab",
+                        "on-secondary-container": "#583300",
+                        "on-primary": "#063900",
+                        "on-tertiary": "#48272a",
+                        "surface-dim": "#121414",
+                        "surface-container-highest": "#333535",
+                        "border-subtle": "#30363D",
+                        "primary-fixed-dim": "#34e507",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed": "#ffdadc",
+                        "primary": "#d4ffc1",
+                        "surface-bright": "#38393a",
+                        "on-primary-fixed": "#022100",
+                        "on-error": "#690005",
+                        "outline": "#86957d",
+                        "on-background": "#e2e2e2",
+                        "secondary-fixed-dim": "#ffb86b",
+                        "glow-green": "rgba(74, 246, 38, 0.25)",
+                        "surface-container-lowest": "#0c0f0f",
+                        "primary-container": "#4af626",
+                        "error-container": "#93000a",
+                        "bg-main": "#0B0C0F",
+                        "on-secondary": "#492900",
+                        "primary-fixed": "#79ff59",
+                        "surface-variant": "#333535",
+                        "tertiary-fixed-dim": "#eeb9bd"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "section-gap": "120px",
+                        "section-gap-mobile": "64px",
+                        "gutter": "24px",
+                        "container-padding": "16px",
+                        "max-width": "1200px"
+                    },
+                    "fontFamily": {
+                        "code-md": ["JetBrains Mono"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["JetBrains Mono"],
+                        "display-lg": ["IBM Plex Mono"],
+                        "headline-md": ["IBM Plex Mono"],
+                        "body-lg": ["Inter"],
+                        "display-lg-mobile": ["IBM Plex Mono"]
+                    },
+                    "fontSize": {
+                        "code-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-sm": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #121414;
+            color: #e2e2e2;
+            overflow-x: hidden;
+        }
+
+        .crt-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+            background-size: 100% 4px, 3px 100%;
+            z-index: 1000;
+            pointer-events: none;
+            opacity: 0.15;
+        }
+
+        .grain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("https://grainy-gradients.vercel.app/noise.svg");
+            opacity: 0.05;
+            z-index: 1001;
+            pointer-events: none;
+        }
+
+        .glow-green {
+            box-shadow: 0 0 15px rgba(52, 229, 7, 0.25);
+        }
+
+        .terminal-window {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .terminal-window:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 25px rgba(52, 229, 7, 0.3);
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 1.2em;
+            background: #34e507;
+            vertical-align: middle;
+            animation: blink 1s step-end infinite;
+        }
+
+        .modal-active {
+            overflow: hidden;
+        }
+
+        #modal-overlay {
+            backdrop-filter: blur(8px);
+            transition: opacity 0.3s ease;
+        }
+    </style>
+</head>
+<body class="font-body-md selection:bg-surface-tint selection:text-surface">
+<div class="crt-overlay"></div>
+<div class="grain"></div>
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 backdrop-blur-xl border-b border-outline-variant bg-surface/80 dark:bg-surface/80">
+<div class="flex justify-between items-center w-full px-gutter max-w-max-width mx-auto h-16">
+<div class="text-headline-md font-headline-md font-bold text-surface-tint tracking-tighter">
+                SYS_PORTFOLIO_V1.0
+            </div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-on-surface-variant font-medium hover:text-surface-tint hover:glow-green transition-all duration-150" href="#">root</a>
+<a class="text-on-surface-variant font-medium hover:text-surface-tint hover:glow-green transition-all duration-150" href="#">about</a>
+<a class="text-surface-tint font-bold border-b-2 border-surface-tint pb-1 hover:glow-green transition-all duration-150" href="#">projects</a>
+<a class="text-on-surface-variant font-medium hover:text-surface-tint hover:glow-green transition-all duration-150" href="#">history</a>
+<a class="text-on-surface-variant font-medium hover:text-surface-tint hover:glow-green transition-all duration-150" href="#">contact</a>
+</nav>
+<div class="flex items-center gap-4 text-surface-tint">
+<span class="material-symbols-outlined cursor-pointer hover:scale-110 transition-transform">terminal</span>
+<span class="material-symbols-outlined cursor-pointer hover:scale-110 transition-transform">settings</span>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-section-gap px-gutter max-w-max-width mx-auto">
+<!-- Hero Title Section -->
+<div class="mb-16">
+<div class="flex items-center gap-2 mb-4">
+<span class="text-surface-tint font-code-md text-code-md">C:\USERS\ALEX\WORK_DIR&gt;</span>
+<span class="font-code-md text-code-md text-on-surface-variant">ls -la ./projects</span>
+</div>
+<h1 class="font-display-lg text-display-lg md:text-display-lg text-on-surface mb-4">PROJECT_ARCHIVE</h1>
+<p class="text-on-surface-variant max-w-2xl text-body-lg font-body-lg">
+                A catalog of compiled systems, decentralized protocols, and neural architectures. Click any executable to view documentation.
+            </p>
+</div>
+<!-- Bento Grid Projects -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project 1 -->
+<div class="terminal-window group cursor-pointer border border-outline-variant bg-surface-container-low rounded overflow-hidden flex flex-col" onclick="openModal('neural_net_v1.bin', 'Neural Pathfinding Architecture', 'A high-performance neural engine optimized for low-latency decision making in autonomous robotics. Features a custom backpropagation algorithm and real-time visualization layer.', ['PyTorch', 'Rust', 'CUDA', 'WebAssembly'], 'image-neural-system')">
+<div class="bg-outline-variant/30 px-4 py-2 flex items-center justify-between border-b border-outline-variant">
+<span class="font-code-md text-label-sm text-surface-tint flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">terminal</span> neural_net_v1.bin
+                    </span>
+<div class="flex gap-1.5">
+<div class="w-2.5 h-2.5 rounded-full bg-on-surface-variant/20"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-on-surface-variant/20"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-surface-tint/60"></div>
+</div>
+</div>
+<div class="p-0 aspect-video relative overflow-hidden bg-black">
+<img alt="Neural Network Visualization" class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-500" data-alt="A macro visualization of a neural network in a dark, technical environment. Glowing green synaptic connections weave through a dense grid of microscopic processors. The lighting is low-key with intense neon green highlights that mimic a terminal display. The overall aesthetic is retro-futuristic and hyper-technical, resembling a mainframe internal visualizer." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAezoByF8PQ1cP_DDqyd8Kf0mAZIGaI0Tafvy_crdTInxVd4K80Ilu63_GO8iftWY_eoyPBSGYSI77URSVJe2TDWFk5jl_8lfOCWlFDzco8npbOXmMikdrck9jx-sb-9KV7TbxRHPAUA7ZIIRsmxnerOXgp0DMlog9KeBuhtiktUElYsUiCYM81MKNmCLafLG9OL11u96ONXMdyBv_F-hAoMTAWIzr_tjBQmDukCn9qDK6p-HkeY055gWYUXTxh2bmusRznfpKiSNA"/>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md mb-2 text-on-surface">Neural Pathfinding</h3>
+<p class="text-on-surface-variant text-body-md line-clamp-2">Autonomous routing engine utilizing edge-computing nodes for real-time traffic analysis.</p>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="px-2 py-1 text-code-md font-code-md border border-outline-variant text-on-surface-variant rounded">Rust</span>
+<span class="px-2 py-1 text-code-md font-code-md border border-outline-variant text-on-surface-variant rounded">CUDA</span>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="terminal-window group cursor-pointer border border-outline-variant bg-surface-container-low rounded overflow-hidden flex flex-col" onclick="openModal('blockchain_core.exe', 'L-Layer Consensus Core', 'An experimental layer-2 scaling solution for Ethereum using zk-rollups. Achieved 5,000 TPS on testnet benchmarks with sub-second finality.', ['Solidity', 'Go', 'Typescript', 'ZKP'], 'image-blockchain')">
+<div class="bg-outline-variant/30 px-4 py-2 flex items-center justify-between border-b border-outline-variant">
+<span class="font-code-md text-label-sm text-surface-tint flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">terminal</span> blockchain_core.exe
+                    </span>
+<div class="flex gap-1.5">
+<div class="w-2.5 h-2.5 rounded-full bg-on-surface-variant/20"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-on-surface-variant/20"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-surface-tint/60"></div>
+</div>
+</div>
+<div class="p-0 aspect-video relative overflow-hidden bg-black">
+<img alt="Blockchain Nodes" class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-500" data-alt="A stylized geometric representation of a blockchain network consisting of interconnected crystalline blocks floating in a void. Pulsating data streams in electric green flow between the nodes. The atmosphere is cinematic and moody, with high contrast between deep shadows and bright data lines. The scene conveys security, complexity, and decentralized power in a sleek, digital art style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRgP019eNCBzCzz8ia1VmWEuocggx4XC2d230cx4NvLQkGKn3amJ8Q8_9emC8UQ0ibblhZip5DUlGcF8Nvq7bnnNxrmisGCpS2r9t_jaCUZLPb2EjlBuiwJMI_4B0dwUd17GFPGm3IsvFLA3DTW3RvI8osz-cpQKRtt1hw-WMK9wEKC63R9hvOsDOrOXbJ8rUHJOLrp2DxJMpIK7y5s-E2vcQpRHYhHkwRQuJIVIuYIyTRryf-vqiE_zgWFuwlgyiCUEZvqX-EWIU"/>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md mb-2 text-on-surface">L-Layer Consensus</h3>
+<p class="text-on-surface-variant text-body-md line-clamp-2">High-throughput scaling protocol for decentralized ledgers focusing on sub-second finality.</p>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="px-2 py-1 text-code-md font-code-md border border-outline-variant text-on-surface-variant rounded">Go</span>
+<span class="px-2 py-1 text-code-md font-code-md border border-outline-variant text-on-surface-variant rounded">ZKP</span>
+</div>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="terminal-window group cursor-pointer border border-outline-variant bg-surface-container-low rounded overflow-hidden flex flex-col" onclick="openModal('cloud_shell.sh', 'Quantum-Safe Shell Interface', 'A secure terminal environment utilizing post-quantum cryptographic algorithms for remote administration of high-security clusters.', ['C++', 'Python', 'OpenSSL', 'NTRU'], 'image-quantum')">
+<div class="bg-outline-variant/30 px-4 py-2 flex items-center justify-between border-b border-outline-variant">
+<span class="font-code-md text-label-sm text-surface-tint flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">terminal</span> cloud_shell.sh
+                    </span>
+<div class="flex gap-1.5">
+<div class="w-2.5 h-2.5 rounded-full bg-on-surface-variant/20"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-on-surface-variant/20"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-surface-tint/60"></div>
+</div>
+</div>
+<div class="p-0 aspect-video relative overflow-hidden bg-black">
+<img alt="Cloud Infrastructure" class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-500" data-alt="A sprawling digital landscape representing global cloud infrastructure. Millions of tiny light points connect to form a vast, glowing mesh that resembles a digital brain. The colors are dominated by deep navy blues and sharp, acidic greens. The perspective is from high above, looking down on the illuminated data pathways of the world's servers, creating a sense of immense scale and connectivity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQxdhqH3HCi_G-BwVJBqJUsDwdpcZ0Bzy14FWGwBHlx5OJrHDMhn1DrUsEh5CiKJXn8PNZxuKulyoDO8zWI1DyOP7WYGF0PnMWZHBQhYQM4F7GXlwN9eBZs1IlGI07DeuWHy2_Beh38lpP1aHCIbt63Ec8GLkjrCM1Y_Zb0ZhQ5NWSXnBYUWwTwYu7aS9hRnuZ86Ke0tCLLX5lSXS_LGFeDyMvicY7rSe931DZ6EFv03GZb93EXIm-nuzT_peJ4ZNBU63QyRlSAp8"/>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md mb-2 text-on-surface">Quantum-Safe Shell</h3>
+<p class="text-on-surface-variant text-body-md line-clamp-2">Post-quantum encrypted communication layer for infrastructure management.</p>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="px-2 py-1 text-code-md font-code-md border border-outline-variant text-on-surface-variant rounded">C++</span>
+<span class="px-2 py-1 text-code-md font-code-md border border-outline-variant text-on-surface-variant rounded">Security</span>
+</div>
+</div>
+</div>
+<!-- Project 4 (Bento Variation) -->
+<div class="terminal-window lg:col-span-2 group cursor-pointer border border-outline-variant bg-surface-container-low rounded overflow-hidden flex flex-col md:flex-row" onclick="openModal('os_kernel_custom.sys', 'Retro OS Kernel 0.1', 'A custom monolith kernel written from scratch for x86 architecture. Features cooperative multitasking, a basic FAT32 filesystem driver, and a minimalist shell environment.', ['Assembly', 'C', 'QEMU', 'GDB'], 'image-os')">
+<div class="bg-outline-variant/30 p-2 md:w-12 flex flex-col items-center border-r border-outline-variant gap-4">
+<span class="material-symbols-outlined text-surface-tint rotate-90 md:rotate-0">settings_input_component</span>
+<div class="flex flex-col gap-1.5">
+<div class="w-1.5 h-1.5 rounded-full bg-surface-tint"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-surface-tint/40"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-surface-tint/10"></div>
+</div>
+</div>
+<div class="flex-1 flex flex-col">
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="font-code-md text-label-sm text-surface-tint">SYSTEM_BOOT: os_kernel_custom.sys</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-1">Retro OS Kernel</h3>
+</div>
+<span class="material-symbols-outlined text-surface-tint">memory</span>
+</div>
+<p class="text-on-surface-variant text-body-md mb-6 max-w-xl">A low-level exploration of operating system fundamentals, built for custom hardware targets. Implements memory management and basic I/O abstractions without standard libraries.</p>
+<div class="flex flex-wrap gap-3">
+<span class="px-3 py-1 bg-surface-tint/10 text-surface-tint font-code-md text-code-md border border-surface-tint/30">x86_64</span>
+<span class="px-3 py-1 bg-surface-tint/10 text-surface-tint font-code-md text-code-md border border-surface-tint/30">Assembly</span>
+<span class="px-3 py-1 bg-surface-tint/10 text-surface-tint font-code-md text-code-md border border-surface-tint/30">Low-Level</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Project 5 -->
+<div class="terminal-window group cursor-pointer border border-outline-variant bg-surface-container-low rounded overflow-hidden flex flex-col" onclick="openModal('vector_db.dat', 'Vector Search Engine', 'Optimized spatial indexing for high-dimensional vector embeddings. Used for semantic search across millions of documents.', ['Python', 'Faiss', 'Numpy'], 'image-search')">
+<div class="bg-outline-variant/30 px-4 py-2 flex items-center justify-between border-b border-outline-variant">
+<span class="font-code-md text-label-sm text-surface-tint flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">database</span> vector_db.dat
+                    </span>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md mb-2 text-on-surface">Vector Engine</h3>
+<p class="text-on-surface-variant text-body-md line-clamp-3">Sub-linear search performance for similarity matching in vast unstructured datasets using HNSW algorithms.</p>
+</div>
+</div>
+</div>
+<!-- Terminal Command Line -->
+<div class="mt-section-gap bg-surface-container p-6 border border-outline-variant rounded relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-surface-tint"></div>
+<div class="flex items-center gap-3 font-code-md text-code-md text-surface-tint">
+<span class="material-symbols-outlined">info</span>
+<span>SYSTEM_STATUS: ALL PROJECTS COMPILED SUCCESSFULLY.</span>
+</div>
+<div class="mt-4 font-code-md text-on-surface-variant flex gap-2">
+<span>$</span>
+<span id="typed-text"></span><span class="cursor"></span>
+</div>
+</div>
+</main>
+<!-- Modal Overlay -->
+<div class="fixed inset-0 z-[100] hidden bg-background/80 flex items-center justify-center p-4" id="modal-overlay">
+<div class="w-full max-w-4xl bg-surface border border-surface-tint shadow-[0_0_50px_rgba(52,229,7,0.2)] rounded overflow-hidden" id="modal-container">
+<!-- Modal Header -->
+<div class="bg-outline-variant flex items-center justify-between px-4 py-3 border-b border-surface-tint">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-surface-tint">wysiwyg</span>
+<span class="font-code-md text-label-sm text-surface-tint" id="modal-filename">project_file.exe</span>
+</div>
+<button class="text-surface-tint hover:bg-surface-tint hover:text-surface transition-colors p-1 flex items-center justify-center" onclick="closeModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Modal Content -->
+<div class="flex flex-col md:flex-row h-full max-h-[819px] overflow-y-auto">
+<!-- Project Image/Art -->
+<div class="md:w-1/2 border-r border-outline-variant bg-black flex items-center justify-center relative group">
+<img alt="Project Preview" class="w-full h-full object-cover opacity-80" data-alt="A detailed view of a complex software interface featuring scrolling lines of code, real-time data charts, and neon terminal elements. The lighting mimics the glow of a CRT monitor, casting a green and cyan tint over the dark workstation background. The mood is focused and intellectual, capturing the essence of a high-end engineering project in development." id="modal-image" src=""/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent md:hidden"></div>
+</div>
+<!-- Project Details -->
+<div class="md:w-1/2 p-8 flex flex-col">
+<h2 class="font-display-lg text-headline-md md:text-display-lg text-surface-tint mb-4" id="modal-title">Project Title</h2>
+<div class="space-y-6">
+<div>
+<h4 class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-widest mb-2 border-b border-outline-variant inline-block">Description</h4>
+<p class="text-body-md text-on-surface leading-relaxed" id="modal-desc">Detailed project description goes here...</p>
+</div>
+<div>
+<h4 class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-widest mb-2 border-b border-outline-variant inline-block">Stack</h4>
+<div class="flex flex-wrap gap-2 pt-2" id="modal-stack">
+<!-- Tags injected here -->
+</div>
+</div>
+<div class="pt-8 flex gap-4 mt-auto">
+<a class="flex-1 py-3 border border-surface-tint bg-surface-tint/10 text-surface-tint font-code-md text-center hover:bg-surface-tint hover:text-surface transition-all duration-150" href="#">
+<span class="flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">code</span> VIEW_SOURCE
+                                </span>
+</a>
+<a class="flex-1 py-3 border border-outline-variant text-on-surface font-code-md text-center hover:bg-outline-variant transition-all duration-150" href="#">
+<span class="flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">language</span> LIVE_DEMO
+                                </span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="bg-surface-container-low px-4 py-2 border-t border-outline-variant flex justify-between items-center">
+<span class="text-[10px] font-code-md text-on-surface-variant">SECURE_SHELL_ESTABLISHED // ACCESS_LEVEL: ROOT</span>
+<span class="text-[10px] font-code-md text-on-surface-variant">BUILD: v2.4.0-stable</span>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="w-full py-8 border-t border-outline-variant mt-section-gap bg-surface dark:bg-surface">
+<div class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-max-width mx-auto gap-4">
+<div class="text-label-sm font-label-sm text-surface-tint">
+                © 2024 TERMINAL_SYSTEMS. ALL RIGHTS RESERVED.
+            </div>
+<div class="flex gap-8">
+<a class="text-on-surface-variant text-label-sm font-label-sm hover:text-primary-fixed-dim transition-colors" href="#">github</a>
+<a class="text-on-surface-variant text-label-sm font-label-sm hover:text-primary-fixed-dim transition-colors" href="#">linkedin</a>
+<a class="text-on-surface-variant text-label-sm font-label-sm hover:text-primary-fixed-dim transition-colors" href="#">source_code</a>
+</div>
+</div>
+</footer>
+<script>
+        function openModal(filename, title, desc, stack, imgId) {
+            const overlay = document.getElementById('modal-overlay');
+            const modalFilename = document.getElementById('modal-filename');
+            const modalTitle = document.getElementById('modal-title');
+            const modalDesc = document.getElementById('modal-desc');
+            const modalStack = document.getElementById('modal-stack');
+            const modalImage = document.getElementById('modal-image');
+
+            modalFilename.innerText = filename;
+            modalTitle.innerText = title;
+            modalDesc.innerText = desc;
+            
+            // Handle image mapping
+            const imageMap = {
+                'image-neural-system': 'https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+                'image-blockchain': 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+                'image-quantum': 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+                'image-os': 'https://images.unsplash.com/photo-1518433278983-2616ec164132?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+                'image-search': 'https://images.unsplash.com/photo-1558494949-ef010cbdcc4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'
+            };
+            modalImage.src = imageMap[imgId] || 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80';
+
+            // Clear and fill stack
+            modalStack.innerHTML = '';
+            stack.forEach(tech => {
+                const span = document.createElement('span');
+                span.className = 'px-2 py-1 text-code-md font-code-md border border-outline-variant text-surface-tint rounded bg-surface-tint/5';
+                span.innerText = tech;
+                modalStack.appendChild(span);
+            });
+
+            overlay.classList.remove('hidden');
+            document.body.classList.add('modal-active');
+            
+            // Animation for modal opening
+            document.getElementById('modal-container').classList.add('animate-modal-enter');
+        }
+
+        function closeModal() {
+            const overlay = document.getElementById('modal-overlay');
+            overlay.classList.add('hidden');
+            document.body.classList.remove('modal-active');
+        }
+
+        // Close on overlay click
+        document.getElementById('modal-overlay').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+
+        // Typing effect for the bottom command line
+        const text = "init project_explorer --filter=all --view=detailed";
+        const target = document.getElementById('typed-text');
+        let index = 0;
+
+        function type() {
+            if (index < text.length) {
+                target.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(type, 50);
+            }
+        }
+        
+        setTimeout(type, 1000);
+
+        // Escape key to close modal
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+    </script>
+</body></html>

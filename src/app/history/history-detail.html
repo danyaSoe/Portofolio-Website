@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SYS_PORTFOLIO_V1.0 | DECRYPTION_LOG</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100..900&amp;family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-highest": "#333535",
+            "surface-bright": "#38393a",
+            "tertiary-fixed-dim": "#eeb9bd",
+            "outline-variant": "#3c4b36",
+            "surface-container": "#1e2020",
+            "tertiary": "#ffefef",
+            "surface": "#121414",
+            "border-subtle": "#30363D",
+            "primary-container": "#4af626",
+            "on-secondary-fixed-variant": "#683d00",
+            "primary": "#d4ffc1",
+            "surface-dim": "#121414",
+            "on-tertiary-fixed-variant": "#623c40",
+            "text-muted": "#B8B8B8",
+            "secondary-container": "#ed9000",
+            "bg-surface": "#15181E",
+            "on-background": "#e2e2e2",
+            "on-primary-fixed-variant": "#0c5300",
+            "surface-tint": "#34e507",
+            "primary-fixed": "#79ff59",
+            "surface-variant": "#333535",
+            "on-secondary-container": "#583300",
+            "on-primary-container": "#136c00",
+            "inverse-primary": "#136e00",
+            "bg-main": "#0B0C0F",
+            "on-secondary-fixed": "#2c1700",
+            "on-primary": "#063900",
+            "on-primary-fixed": "#022100",
+            "on-error": "#690005",
+            "error-container": "#93000a",
+            "glow-green": "rgba(74, 246, 38, 0.25)",
+            "surface-container-low": "#1a1c1c",
+            "tertiary-container": "#ffc9cd",
+            "background": "#121414",
+            "on-error-container": "#ffdad6",
+            "secondary-fixed": "#ffdcbc",
+            "outline": "#86957d",
+            "inverse-surface": "#e2e2e2",
+            "error": "#ffb4ab",
+            "on-tertiary": "#48272a",
+            "on-surface-variant": "#bbccb0",
+            "tertiary-fixed": "#ffdadc",
+            "surface-container-lowest": "#0c0f0f",
+            "primary-fixed-dim": "#34e507",
+            "surface-container-high": "#282a2b",
+            "inverse-on-surface": "#2f3131",
+            "secondary": "#ffb86b",
+            "on-surface": "#e2e2e2",
+            "on-secondary": "#492900",
+            "secondary-fixed-dim": "#ffb86b",
+            "on-tertiary-fixed": "#301216",
+            "on-tertiary-container": "#7b5256"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "gutter": "24px",
+            "max-width": "1200px",
+            "container-padding": "16px",
+            "section-gap": "120px",
+            "section-gap-mobile": "64px"
+          },
+          "fontFamily": {
+            "headline-md": ["IBM Plex Mono"],
+            "display-lg-mobile": ["IBM Plex Mono"],
+            "body-md": ["Inter"],
+            "label-sm": ["JetBrains Mono"],
+            "display-lg": ["IBM Plex Mono"],
+            "code-md": ["JetBrains Mono"],
+            "body-lg": ["Inter"]
+          },
+          "fontSize": {
+            "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+            "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+            "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+            "label-sm": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+            "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "code-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+            "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #0B0C0F;
+      color: #e2e2e2;
+      overflow-x: hidden;
+    }
+
+    /* CRT Scanline Overlay */
+    .crt-overlay::before {
+      content: " ";
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                  linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+      z-index: 9999;
+      background-size: 100% 4px, 3px 100%;
+      pointer-events: none;
+    }
+
+    .crt-overlay::after {
+      content: " ";
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: rgba(18, 16, 16, 0.1);
+      opacity: 0;
+      z-index: 9998;
+      pointer-events: none;
+      animation: flicker 0.15s infinite;
+    }
+
+    @keyframes flicker {
+      0% { opacity: 0.27861; }
+      5% { opacity: 0.34769; }
+      10% { opacity: 0.23604; }
+      15% { opacity: 0.90626; }
+      20% { opacity: 0.18128; }
+      25% { opacity: 0.83891; }
+      30% { opacity: 0.65583; }
+      35% { opacity: 0.57807; }
+      40% { opacity: 0.26559; }
+      45% { opacity: 0.84693; }
+      50% { opacity: 0.96019; }
+      55% { opacity: 0.08594; }
+      60% { opacity: 0.20313; }
+      65% { opacity: 0.71988; }
+      70% { opacity: 0.53455; }
+      75% { opacity: 0.37288; }
+      80% { opacity: 0.71428; }
+      85% { opacity: 0.70419; }
+      90% { opacity: 0.7003; }
+      95% { opacity: 0.36108; }
+      100% { opacity: 0.24387; }
+    }
+
+    .glow-text {
+      text-shadow: 0 0 10px rgba(52, 229, 7, 0.8);
+    }
+
+    .glow-border {
+      box-shadow: 0 0 15px rgba(52, 229, 7, 0.2);
+    }
+
+    .scanline-content {
+      background: linear-gradient(to bottom, transparent 50%, rgba(52, 229, 7, 0.02) 50%);
+      background-size: 100% 4px;
+    }
+
+    .terminal-scrollbar::-webkit-scrollbar {
+      width: 4px;
+    }
+    .terminal-scrollbar::-webkit-scrollbar-track {
+      background: #121414;
+    }
+    .terminal-scrollbar::-webkit-scrollbar-thumb {
+      background: #34e507;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .cursor-blink {
+      animation: blink 1s step-end infinite;
+    }
+  </style>
+</head>
+<body class="crt-overlay terminal-scrollbar">
+<!-- Background Layer -->
+<div class="fixed inset-0 z-0 bg-main opacity-40">
+
+</div>
+<!-- TopNavBar (Shared Component) -->
+<nav class="fixed top-0 w-full z-50 backdrop-blur-xl border-b border-outline-variant bg-surface/80 dark:bg-surface/80">
+<div class="flex justify-between items-center w-full px-gutter max-w-max-width mx-auto h-16">
+<div class="text-headline-md font-headline-md font-bold text-surface-tint tracking-tighter">SYS_PORTFOLIO_V1.0</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant font-medium hover:text-surface-tint hover:glow-green transition-all duration-150 font-label-sm text-label-sm" href="#">root</a>
+<a class="text-on-surface-variant font-medium hover:text-surface-tint hover:glow-green transition-all duration-150 font-label-sm text-label-sm" href="#">about</a>
+<a class="text-on-surface-variant font-medium hover:text-surface-tint hover:glow-green transition-all duration-150 font-label-sm text-label-sm" href="#">projects</a>
+<a class="text-surface-tint font-bold border-b-2 border-surface-tint pb-1 font-label-sm text-label-sm" href="#">history</a>
+<a class="text-on-surface-variant font-medium hover:text-surface-tint hover:glow-green transition-all duration-150 font-label-sm text-label-sm" href="#">contact</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-surface-tint cursor-pointer hover:scale-95 transition-transform" data-icon="terminal">terminal</span>
+<span class="material-symbols-outlined text-surface-tint cursor-pointer hover:scale-95 transition-transform" data-icon="settings">settings</span>
+</div>
+</div>
+</nav>
+<!-- Modal Overlay / Container -->
+<main class="relative z-10 pt-32 pb-16 px-gutter flex flex-col items-center">
+<!-- Modal Window (Terminal UI) -->
+<section class="w-full max-w-4xl bg-surface border border-surface-tint/50 rounded-lg overflow-hidden flex flex-col glow-border shadow-2xl">
+<!-- Terminal Header Bar -->
+<div class="bg-surface-container-highest/80 px-4 py-3 flex justify-between items-center border-b border-outline-variant">
+<div class="flex items-center gap-3">
+<div class="flex gap-1.5">
+<div class="w-3 h-3 rounded-full bg-error"></div>
+<div class="w-3 h-3 rounded-full bg-secondary"></div>
+<div class="w-3 h-3 rounded-full bg-surface-tint"></div>
+</div>
+<div class="ml-4 flex items-center text-label-sm font-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] mr-2" data-icon="description">description</span>
+            SYSTEM_LOG_DECRYPTION // ENTRY_492.EXE
+          </div>
+</div>
+<div class="text-label-sm font-label-sm text-surface-tint bg-primary-container/10 px-2 py-0.5 rounded border border-primary-container/30">
+          SECURE_STREAM: ACTIVE
+        </div>
+</div>
+<!-- Scrollable Modal Content -->
+<div class="flex-1 overflow-y-auto max-h-[819px] scanline-content terminal-scrollbar">
+<!-- Header Info -->
+<header class="p-8 border-b border-outline-variant/30">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="space-y-2">
+<div class="inline-block px-2 py-1 bg-surface-tint/10 text-surface-tint font-label-sm text-label-sm border border-surface-tint/20 mb-2">
+                &gt; LEVEL 4_PRIVILEGED_ACCESS
+              </div>
+<h1 class="font-display-lg text-display-lg md:text-display-lg text-surface-tint leading-tight tracking-tight uppercase glow-text">
+                SENIOR SYSTEMS ARCHITECT
+              </h1>
+<div class="flex items-center gap-3 text-headline-md font-headline-md text-on-surface-variant">
+<span class="text-surface-tint font-bold">@</span>
+<span>UNIVERSITY TECH LAB</span>
+<span class="text-on-surface-variant/40 ml-2">|</span>
+<span class="text-body-md font-body-md text-surface-tint/80 ml-2">2020 - PRESENT</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<div class="text-label-sm font-label-sm text-on-surface-variant mb-1">DATA_INTEGRITY</div>
+<div class="flex gap-1">
+<div class="w-6 h-2 bg-surface-tint"></div>
+<div class="w-6 h-2 bg-surface-tint"></div>
+<div class="w-6 h-2 bg-surface-tint"></div>
+<div class="w-6 h-2 bg-surface-tint"></div>
+<div class="w-6 h-2 bg-surface-tint/20"></div>
+</div>
+</div>
+</div>
+</header>
+<div class="p-8 space-y-12">
+<!-- General Description -->
+<article class="space-y-4">
+<div class="flex items-center gap-2 text-surface-tint font-label-sm text-label-sm border-l-4 border-surface-tint pl-3">
+<span class="material-symbols-outlined" data-icon="info">info</span>
+              EXEC_SUMMARY
+            </div>
+<p class="text-body-lg font-body-lg text-on-surface-variant leading-relaxed max-w-3xl">
+              Leading the architectural design and deployment of distributed neural networks across academic computing clusters. Tasked with maintaining sub-50ms latency for real-time sensor processing and orchestrating heterogeneous compute nodes in a high-security research environment.
+            </p>
+</article>
+<!-- WHAT I DID Section -->
+<article class="space-y-6">
+<div class="flex items-center gap-2 text-surface-tint font-label-sm text-label-sm border-l-4 border-surface-tint pl-3">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+              WHAT_I_DID
+            </div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+<div class="flex gap-4 p-4 border border-outline-variant/20 bg-surface-container-low/30 hover:bg-surface-container-low/50 transition-colors group">
+<span class="text-surface-tint font-code-md text-code-md mt-1">01</span>
+<div>
+<h3 class="text-label-sm font-label-sm text-surface-tint group-hover:glow-text">KERNEL_OPTIMIZATION</h3>
+<p class="text-body-md font-body-md text-on-surface-variant/80 mt-1">Refactored legacy Unix-based drivers to support direct memory access for specialized GPU hardware, increasing throughput by 240%.</p>
+</div>
+</div>
+<div class="flex gap-4 p-4 border border-outline-variant/20 bg-surface-container-low/30 hover:bg-surface-container-low/50 transition-colors group">
+<span class="text-surface-tint font-code-md text-code-md mt-1">02</span>
+<div>
+<h3 class="text-label-sm font-label-sm text-surface-tint group-hover:glow-text">NEURAL_ROUTING</h3>
+<p class="text-body-md font-body-md text-on-surface-variant/80 mt-1">Designed an asynchronous message broker facilitating communication between 400+ concurrent AI modeling agents.</p>
+</div>
+</div>
+<div class="flex gap-4 p-4 border border-outline-variant/20 bg-surface-container-low/30 hover:bg-surface-container-low/50 transition-colors group">
+<span class="text-surface-tint font-code-md text-code-md mt-1">03</span>
+<div>
+<h3 class="text-label-sm font-label-sm text-surface-tint group-hover:glow-text">SECURE_TUNNEL_V2</h3>
+<p class="text-body-md font-body-md text-on-surface-variant/80 mt-1">Implemented end-to-end encrypted datastreams using quantum-resistant algorithms for classified research transmission.</p>
+</div>
+</div>
+<div class="flex gap-4 p-4 border border-outline-variant/20 bg-surface-container-low/30 hover:bg-surface-container-low/50 transition-colors group">
+<span class="text-surface-tint font-code-md text-code-md mt-1">04</span>
+<div>
+<h3 class="text-label-sm font-label-sm text-surface-tint group-hover:glow-text">LEGACY_DECOMMISSION</h3>
+<p class="text-body-md font-body-md text-on-surface-variant/80 mt-1">Supervised the migration of 15 years of research data from tape-drive storage into a modern S3-compatible cloud architecture.</p>
+</div>
+</div>
+</div>
+</article>
+<!-- Project Artifacts -->
+<article class="space-y-6">
+<div class="flex items-center gap-2 text-surface-tint font-label-sm text-label-sm border-l-4 border-surface-tint pl-3">
+<span class="material-symbols-outlined" data-icon="photo_library">photo_library</span>
+              PROJECT_ARTIFACTS
+            </div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 h-96">
+<!-- Artifact 1 -->
+<div class="relative group overflow-hidden border border-outline-variant/50 cursor-crosshair">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-100" data-alt="A highly technical close-up of a server rack inside a dark data center, featuring glowing green and blue LED indicators. The image is captured with a shallow depth of field, emphasizing the intricate wiring and metallic textures of the networking hardware. The lighting is moody and cybernetic, reflecting a retro-futuristic aesthetic consistent with a high-end tech lab environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2y80I-0zKmSLCsV22DY7cBc1lgpD9zRcQvpZq0DMEgNcO3rZ127Uzd7WkmSnA63fwBzy54yrYqdz8_d7RQggDgYFD_ID4lmOlJZ6-r8jexMGMRXUNsDILhcj8MAnuI-zIsOs9INx7fPS2xciN-m1jKBtNdoGJBN4kKNPQZS1kljQIu7P6EL7c3ksBaZa9GRl4anh7PplAeX3crhUwQkOKvdNe3gwV--Xy2OHDuJpvD63kxy55eLMHyf_oZwGVhUVKT_fEiGeCAF8"/>
+<div class="absolute inset-0 bg-surface-tint/10 group-hover:bg-transparent transition-colors"></div>
+<div class="absolute bottom-0 left-0 right-0 p-3 bg-surface/90 border-t border-outline-variant/50 transform translate-y-full group-hover:translate-y-0 transition-transform">
+<div class="text-label-sm font-label-sm text-surface-tint">MAIN_FRAME_A.JPG</div>
+</div>
+</div>
+<!-- Artifact 2 (Video/Motion Placeholder) -->
+<div class="relative group overflow-hidden border border-outline-variant/50 cursor-crosshair md:col-span-2">
+<img class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-all" data-alt="A macro shot of a complex green-tinted computer motherboard with glowing data pathways and microchips. The scene is illuminated by neon-like green light that flows through the circuits, simulating electricity and data transfer. The composition is sleek and technical, emphasizing precision engineering and high-performance computing components in a dark, atmospheric setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUmD3unUduZuhMy_6ubnCa38qWT-d8xyGVRUh_FJZyjgk5l2I61XD0skEG2MX9GX7ClWlpuQo-lVSq0nHovWSYj80tOP_1ZvXmwG6q39igb2ypnnwd3zRS-iTsxiq8zgsKbBGHMhMQC-_b4Yd516doq_FI2Mc5idpMmjds4yzlJwjrIoHUMC9KOYrxHSpLuIQ5e0ZZDPy4ZDYrfar84fFBC9nsiu75r9UFnHGfHnbdhIPZfVqXskkAwfzQa_lokbfrO-qFVt6EFMI"/>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="w-16 h-16 rounded-full bg-surface-tint/20 border border-surface-tint flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-surface-tint text-4xl" data-icon="play_arrow" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<div class="absolute top-4 left-4">
+<span class="bg-error text-on-error font-label-sm text-label-sm px-2 py-1 flex items-center gap-1">
+<span class="w-2 h-2 bg-on-error rounded-full animate-pulse"></span>
+                    LIVE_FEED_REPLAY
+                  </span>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-3 bg-surface/90 border-t border-outline-variant/50 transform translate-y-full group-hover:translate-y-0 transition-transform">
+<div class="text-label-sm font-label-sm text-surface-tint">LOG_PROCESS_V1.MOV</div>
+</div>
+</div>
+</div>
+<!-- ASCII Divider/Status -->
+<div class="py-4 font-code-md text-code-md text-surface-tint/40 flex justify-center tracking-widest select-none">
+              ///////////////////////////////// END_OF_LOG /////////////////////////////////
+            </div>
+</article>
+</div>
+</div>
+<!-- Footer / Action Bar -->
+<footer class="p-6 bg-surface-container border-t border-outline-variant flex flex-col md:flex-row gap-4 items-center justify-between">
+<div class="flex items-center gap-4 text-label-sm font-label-sm text-on-surface-variant/60">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+          DECRYPTION_COMPLETE [CRC32: 0xFD42A]
+        </div>
+<div class="flex gap-4">
+<button class="px-6 py-2 border border-surface-tint/50 text-surface-tint font-label-sm text-label-sm hover:bg-surface-tint hover:text-on-primary transition-all flex items-center gap-2 group">
+<span class="material-symbols-outlined group-hover:rotate-180 transition-transform" data-icon="download">download</span>
+            DOWNLOAD_FULL_TRANSCRIPT
+          </button>
+<button class="px-6 py-2 border border-error/50 text-error font-label-sm text-label-sm hover:bg-error hover:text-on-error transition-all flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+            ABORT_VIEW
+          </button>
+</div>
+</footer>
+</section>
+<!-- Page Content Placeholder (Behind Modal) -->
+<div class="mt-section-gap w-full max-w-4xl opacity-10 pointer-events-none select-none">
+<div class="space-y-8">
+<div class="h-12 w-64 bg-surface-tint/20 rounded"></div>
+<div class="grid grid-cols-2 gap-8">
+<div class="h-64 bg-surface-tint/10 border border-surface-tint/20 rounded"></div>
+<div class="h-64 bg-surface-tint/10 border border-surface-tint/20 rounded"></div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="w-full py-8 border-t border-outline-variant mt-section-gap bg-surface dark:bg-surface">
+<div class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-max-width mx-auto gap-4">
+<div class="text-label-sm font-label-sm text-surface-tint uppercase tracking-widest">© 2024 TERMINAL_SYSTEMS. ALL RIGHTS RESERVED.</div>
+<div class="flex gap-6">
+<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors font-label-sm text-label-sm" href="#">github</a>
+<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors font-label-sm text-label-sm" href="#">linkedin</a>
+<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors font-label-sm text-label-sm" href="#">source_code</a>
+</div>
+<div class="text-code-md font-code-md text-surface-tint/50">SYS_V1.0.4_STABLE</div>
+</div>
+</footer>
+<!-- Blinking Cursor interaction -->
+<div class="fixed bottom-4 right-4 z-[60] bg-surface-tint text-on-primary px-3 py-1 font-label-sm text-label-sm hidden md:flex items-center gap-2">
+<span>SYSTEM_ACTIVE</span>
+<span class="w-2 h-4 bg-white cursor-blink"></span>
+</div>
+<script>
+    // Micro-interaction: Keyboard sound or flicker effect on button click
+    document.querySelectorAll('button, a').forEach(el => {
+      el.addEventListener('mousedown', () => {
+        document.body.style.opacity = '0.7';
+        setTimeout(() => document.body.style.opacity = '1', 50);
+      });
+    });
+
+    // Mock "Terminal Typing" effect for certain headlines
+    const typeEffect = (element, speed = 50) => {
+      const text = element.innerText;
+      element.innerText = '';
+      let i = 0;
+      const interval = setInterval(() => {
+        if (i < text.length) {
+          element.innerText += text.charAt(i);
+          i++;
+        } else {
+          clearInterval(interval);
+        }
+      }, speed);
+    };
+
+    // Apply typing effect to the main headline after a brief delay
+    window.onload = () => {
+      const headline = document.querySelector('h1');
+      if(headline) typeEffect(headline, 40);
+    };
+  </script>
+</body></html>

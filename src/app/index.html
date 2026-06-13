@@ -1,0 +1,549 @@
+<html class="dark" lang="en"><head></head><body class="bg-background text-on-background font-body-md overflow-x-hidden grain">```html
+
+
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DANYA DAMARIS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&amp;family=Inter:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#301216",
+                    "surface-tint": "#34e507",
+                    "inverse-surface": "#e2e2e2",
+                    "secondary": "#ffb86b",
+                    "surface-container-high": "#282a2b",
+                    "surface": "#121414",
+                    "on-primary-fixed-variant": "#0c5300",
+                    "on-surface-variant": "#bbccb0",
+                    "tertiary": "#ffefef",
+                    "on-secondary-fixed-variant": "#683d00",
+                    "bg-surface": "#15181E",
+                    "secondary-fixed": "#ffdcbc",
+                    "background": "#121414",
+                    "surface-container": "#1e2020",
+                    "inverse-on-surface": "#2f3131",
+                    "on-secondary-fixed": "#2c1700",
+                    "on-surface": "#e2e2e2",
+                    "tertiary-container": "#ffc9cd",
+                    "outline-variant": "#3c4b36",
+                    "secondary-container": "#ed9000",
+                    "on-primary-container": "#136c00",
+                    "inverse-primary": "#136e00",
+                    "on-primary": "#063900",
+                    "on-secondary-container": "#583300",
+                    "on-tertiary": "#48272a",
+                    "surface-dim": "#121414",
+                    "border-subtle": "#30363D",
+                    "surface-container-highest": "#333535",
+                    "on-error-container": "#ffdad6",
+                    "primary-fixed-dim": "#34e507",
+                    "on-tertiary-container": "#7b5256",
+                    "text-muted": "#B8B8B8",
+                    "on-tertiary-fixed-variant": "#623c40",
+                    "surface-container-low": "#1a1c1c",
+                    "error": "#ffb4ab",
+                    "surface-container-lowest": "#0c0f0f",
+                    "primary-container": "#4af626",
+                    "error-container": "#93000a",
+                    "bg-main": "#0B0C0F",
+                    "on-secondary": "#492900",
+                    "primary-fixed": "#79ff59",
+                    "surface-variant": "#333535",
+                    "tertiary-fixed-dim": "#eeb9bd",
+                    "primary": "#d4ffc1",
+                    "tertiary-fixed": "#ffdadc",
+                    "surface-bright": "#38393a",
+                    "on-error": "#690005",
+                    "on-primary-fixed": "#022100",
+                    "on-background": "#e2e2e2",
+                    "outline": "#86957d",
+                    "secondary-fixed-dim": "#ffb86b",
+                    "glow-green": "rgba(74, 246, 38, 0.25)"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "container-padding": "16px",
+                    "max-width": "1200px",
+                    "section-gap": "120px",
+                    "section-gap-mobile": "64px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "headline-md": ["IBM Plex Mono"],
+                    "display-lg-mobile": ["IBM Plex Mono"],
+                    "code-md": ["JetBrains Mono"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["IBM Plex Mono"],
+                    "label-sm": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "code-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+        } 50% {
+        opacity: 0;
+        }
+    }
+.cursor-blink {
+    animation: blink 1s step-end infinite
+    }
+.scanlines {
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 4px, 3px 100%;
+    pointer-events: none
+    }
+.grain::after {
+    content: "";
+    position: fixed;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDD36cQ2V-WCHy7dgj9_OpFdE0PzciNIWTFYIZjVzbYoFPn1VoamphVpdhzDnK7zl0xI-qtQiFm5IlAjahJbTR1jpW1O_YRimWEMQa4BLF4-ka2I1Ng5H4KNViYzPcpJi2xTtahdF8BxsagmIUVhIJ9EYnl8-je7iCSvFJq8Lup-N3mV-AMmLB2_y-FySjjR1ky5JXpk9kt_CjBk8DEm2EiZCk4iVFQ32cjQEJMTSLSJp7Ed03dQ-jwNM-P0htunmla0zMAaahj_oA);
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 100
+    }
+.glow-green:hover {
+    box-shadow: 0 0 20px rgba(74, 246, 38, 0.4);
+    border-color: #34e507
+    }
+@keyframes flicker {
+    0% {
+        opacity: 0.97;
+        } 5% {
+        opacity: 0.95;
+        } 10% {
+        opacity: 0.9;
+        } 15% {
+        opacity: 0.95;
+        } 20% {
+        opacity: 0.98;
+        } 25% {
+        opacity: 0.95;
+        } 30% {
+        opacity: 0.9;
+        } 35% {
+        opacity: 0.95;
+        } 40% {
+        opacity: 0.98;
+        } 45% {
+        opacity: 0.95;
+        } 50% {
+        opacity: 0.9;
+        } 100% {
+        opacity: 0.98;
+        }
+    }
+.crt-flicker:hover {
+    animation: flicker 0.15s infinite
+    }
+.terminal-window {
+    border: 1px solid #30363D;
+    background: #15181E
+    }
+.terminal-header {
+    background: #1e2020;
+    border-bottom: 1px solid #30363D;
+    padding: 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px
+    }
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%
+    }
+.dot-red {
+    background: #ff5f56
+    }
+.dot-yellow {
+    background: #ffbd2e
+    }
+.dot-green {
+    background: #27c93f
+    }</style>
+<!-- CRT Overlay -->
+<div class="fixed inset-0 scanlines z-[60] pointer-events-none opacity-20"></div>
+<!-- Navigation -->
+<header class="fixed top-0 w-full z-50 backdrop-blur-xl border-b border-outline-variant bg-surface/80">
+<nav class="flex justify-between items-center w-full px-gutter max-w-max-width mx-auto h-16">
+<a class="text-headline-md font-headline-md font-bold text-surface-tint tracking-tighter" href="index.html">SYS_PORTFOLIO_V1.0</a>
+<div class="hidden md:flex gap-8">
+<a class="text-surface-tint font-bold border-b-2 border-surface-tint pb-1 font-label-sm" href="index.html">root</a>
+<a class="text-on-surface-variant font-medium hover:text-surface-tint transition-all duration-150 font-label-sm" href="about.html">about</a>
+<a class="text-on-surface-variant font-medium hover:text-surface-tint transition-all duration-150 font-label-sm" href="projects.html">projects</a>
+<a class="text-on-surface-variant font-medium hover:text-surface-tint transition-all duration-150 font-label-sm" href="history.html">history</a>
+<a class="text-on-surface-variant font-medium hover:text-surface-tint transition-all duration-150 font-label-sm" href="contact.html">contact</a>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-surface-tint cursor-pointer hover:glow-green transition-all">terminal</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer">settings</span>
+</div>
+</nav>
+</header>
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center justify-center overflow-hidden" id="root">
+
+<div class="relative z-10 text-center px-gutter">
+<div class="mb-4 flex items-center justify-center gap-2 text-surface-tint font-code-md opacity-0 animate-[fadeIn_0.5s_ease-out_forwards]">
+<span class="text-surface-tint">[OK]</span>
+<span id="boot-msg">SYSTEM ONLINE / USER DETECTED / READY.</span>
+</div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-4 tracking-tighter uppercase">
+                DANYA DAMARIS
+            </h1>
+<div class="text-headline-md font-headline-md text-secondary-container mb-12 h-8">
+<span id="tagline"></span><span class="cursor-blink text-surface-tint">_</span>
+</div>
+<div class="flex flex-col md:flex-row gap-6 justify-center">
+<a class="bg-surface-tint/10 border border-surface-tint text-surface-tint px-8 py-3 font-code-md hover:bg-surface-tint hover:text-on-primary transition-all duration-300 glow-green active:scale-95" href="projects.html">
+                    VIEW_PROJECTS.EXE
+                </a>
+<a class="border border-outline-variant text-on-surface-variant px-8 py-3 font-code-md hover:border-on-surface-variant transition-all active:scale-95" href="contact.html">
+                    CONTACT_ME.LOG
+                </a>
+</div>
+</div>
+</section>
+<main class="max-w-max-width mx-auto px-gutter">
+<!-- About & Skills -->
+<section class="py-section-gap-mobile md:py-section-gap grid grid-cols-1 md:grid-cols-2 gap-16 items-start" id="about">
+<div>
+<h2 class="font-headline-md text-headline-md text-surface-tint mb-8 uppercase tracking-widest flex items-center gap-2">
+<span class="w-8 h-[2px] bg-surface-tint"></span> 01. WHO_AM_I
+                </h2>
+<div class="flex flex-col lg:flex-row gap-8 items-center lg:items-start">
+<div class="w-48 h-48 flex-shrink-0 rounded-lg overflow-hidden border border-surface-tint shadow-[0_0_15px_rgba(74,246,38,0.3)]">
+<img alt="Alex Rivera Headshot" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTMXrmHiy_ONsBTvCdkd-tbdo15IkeHnaG8O84ALQ12PxMLgtLrdm6vgGF6XkTjU8_RSTxOajeEY1w4ytgRdPM92N_yN8YATX2p33xPVYNlK1_mbJfKODA6flugC2663eCqUiJJq4oVRDOro-T5cUvOltfAM8C1FIKPoAdoQAiHyECmsUuY7R6EIJ-S0CTrM9-_B88GuMpx0MY1rTaup8WUeyEkj_qAh6QUoOcxbBIm-U-9LdjVZ_YIivBDAm594pvbuPoIbyj6jQ"/>
+</div>
+<div class="space-y-6 text-on-surface-variant font-body-lg flex-1">
+<p>
+      I am a Computer Science student driven by the architecture of complex systems and the elegance of functional code. My journey in technology is a continuous loop of learning, building, and refining.
+    </p>
+<p>
+      Specializing in <span class="text-secondary">Full-Stack Development</span> and <span class="text-surface-tint">Cloud Architecture</span>, I treat every project as a terminal session where efficiency and precision are paramount.
+    </p>
+<div class="p-6 border border-outline-variant bg-surface-container-low italic">
+      "The goal isn't just to write code that works, but to build systems that endure."
+    </div>
+</div>
+</div>
+</div>
+<div class="terminal-window rounded-lg overflow-hidden border-subtle">
+<div class="terminal-header">
+<div class="dot dot-red"></div>
+<div class="dot dot-yellow"></div>
+<div class="dot dot-green"></div>
+<span class="text-label-sm font-code-md text-on-surface-variant ml-2">skills_matrix.sh</span>
+</div>
+<div class="p-6 font-code-md space-y-6">
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-surface-tint">PYTHON</span>
+<span class="text-on-surface-variant">90%</span>
+</div>
+<div class="w-full h-4 bg-surface-container-highest border border-outline-variant">
+<div class="h-full bg-surface-tint" style="width: 90%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-surface-tint">JAVA</span>
+<span class="text-on-surface-variant">85%</span>
+</div>
+<div class="w-full h-4 bg-surface-container-highest border border-outline-variant">
+<div class="h-full bg-surface-tint" style="width: 85%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-surface-tint">TYPESCRIPT</span>
+<span class="text-on-surface-variant">80%</span>
+</div>
+<div class="w-full h-4 bg-surface-container-highest border border-outline-variant">
+<div class="h-full bg-surface-tint" style="width: 80%"></div>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant">
+<span class="text-secondary block mb-4 uppercase text-label-sm">Environment &amp; Tools</span>
+<div class="flex flex-wrap gap-3">
+<span class="px-3 py-1 bg-surface-container border border-outline text-label-sm">REACT</span>
+<span class="px-3 py-1 bg-surface-container border border-outline text-label-sm">NODE.JS</span>
+<span class="px-3 py-1 bg-surface-container border border-outline text-label-sm">DOCKER</span>
+<span class="px-3 py-1 bg-surface-container border border-outline text-label-sm">AWS</span>
+<span class="px-3 py-1 bg-surface-container border border-outline text-label-sm">POSTGRES</span>
+<span class="px-3 py-1 bg-surface-container border border-outline text-label-sm">GIT</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects -->
+<section class="py-section-gap-mobile md:py-section-gap" id="projects">
+<h2 class="font-headline-md text-headline-md text-surface-tint mb-12 uppercase tracking-widest flex items-center gap-2">
+<span class="w-8 h-[2px] bg-surface-tint"></span> 02. PROJECTS.DIR
+            </h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Project 1 -->
+<div class="terminal-window rounded-lg overflow-hidden border-subtle crt-flicker hover:glow-green transition-all duration-300 group">
+<div class="terminal-header">
+<div class="dot dot-red"></div>
+<span class="text-label-sm font-code-md text-on-surface-variant ml-2">neural_net_v1.bin</span>
+</div>
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale group-hover:grayscale-0" data-alt="A sophisticated digital interface of a neural network with glowing green nodes and complex interconnected lines on a deep black background, styled like a retro-futuristic terminal monitor with subtle scanlines and a technical data visualization aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-2SXWSRy8vlygaxvHpirApY8Bh0HIDnq8P35XJXYQpLPGQ9k0LsjRUWcOd37AhUidxRd5jq4CRPKnFqnj0kgDF1oWm8TsseCF3VP5Mm6Rj0Qvq6KAY8WJWsoEgR0LlKts0YCLqorqRNIaiPfaMsotD8vZGq-GTXTGQWkhAj9qrLsDezdM8XgJPkH32hU1Xs7POomQPks1AZoCT6e5zgb1Dy5S6teWSgaVwurIN8xDzATWWmHDNgY8W2j1cZU_Nob5wthaeNkTKq0"/>
+<div class="absolute inset-0 bg-surface/60 mix-blend-multiply"></div>
+</div>
+<div class="p-6">
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2">NEURAL_OBSERVER</h3>
+<p class="text-on-surface-variant text-body-md mb-4">Real-time computer vision system for automated traffic flow analysis.</p>
+<div class="flex gap-2 mb-4 flex-wrap">
+<span class="text-label-sm font-code-md text-surface-tint">#Python</span>
+<span class="text-label-sm font-code-md text-surface-tint">#OpenCV</span>
+<span class="text-label-sm font-code-md text-surface-tint">#PyTorch</span>
+</div>
+<a class="text-surface-tint font-code-md flex items-center gap-2 hover:underline" href="projects.html">
+                            EXECUTE_SRC <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="terminal-window rounded-lg overflow-hidden border-subtle crt-flicker hover:glow-green transition-all duration-300 group">
+<div class="terminal-header">
+<div class="dot dot-yellow"></div>
+<span class="text-label-sm font-code-md text-on-surface-variant ml-2">blockchain_core.exe</span>
+</div>
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale group-hover:grayscale-0" data-alt="Abstract visualization of blockchain blocks as glowing isometric cubes floating in a dark digital space. The lighting is dominated by terminal green and amber orange glows, creating a technical and secure atmosphere reminiscent of early mainframe computing graphics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKMhLe2MMIw27MaS4FwnoyQZHC7FgUOjZey80K5gvpVvhitEC_T1DDxVOwKD2DET1Xp_8Bew7cMPygslqws1xb2AyeG_ykO8AdYAlZV2XEVE71rqImt7skFWujKbX-P4qvx7ZGZd2AVRzBo40wz0q3j-z_lC9usgjK7tcSc3rk4SozveViCGsRLCE8h09KeUgvn-wgVppQxgr3ZwgGWFsY5hp7Rd87jlLqgGwSvHu4kothkLE6IhQvoTCMABRE0lYtZuORNiLLd94"/>
+<div class="absolute inset-0 bg-surface/60 mix-blend-multiply"></div>
+</div>
+<div class="p-6">
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2">LEDGER_SYNC</h3>
+<p class="text-on-surface-variant text-body-md mb-4">Decentralized peer-to-peer file synchronization protocol using Rust.</p>
+<div class="flex gap-2 mb-4 flex-wrap">
+<span class="text-label-sm font-code-md text-surface-tint">#Rust</span>
+<span class="text-label-sm font-code-md text-surface-tint">#Web3</span>
+<span class="text-label-sm font-code-md text-surface-tint">#P2P</span>
+</div>
+<a class="text-surface-tint font-code-md flex items-center gap-2 hover:underline" href="projects.html">
+                            EXECUTE_SRC <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="terminal-window rounded-lg overflow-hidden border-subtle crt-flicker hover:glow-green transition-all duration-300 group">
+<div class="terminal-header">
+<div class="dot dot-green"></div>
+<span class="text-label-sm font-code-md text-on-surface-variant ml-2">cloud_shell.sh</span>
+</div>
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale group-hover:grayscale-0" data-alt="A high-tech digital world map shimmering with data points and connections, rendered in a neon terminal green palette. The visual style is grainy and atmospheric, suggesting a global network monitoring station from a technical perspective." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVoOCQgx9dHc4GofegX1g4kJj7bc-OUv4lT7TmSwFwIzignNCDWUuZOu3dIXI6YkvGv_9AlhconOJhWeeP_4AXaHLH6SRHawI--X5l0369VlNO8V8OrAGD_iqcXPVB0jdk1URdZg31EKQnkfU1QydNNU-QgZtXLkCUnSqPQIKkQDLMCz51HawAeGD2WrTVAGpTICW48QMNq6ebuqp19XZTUPlpyO7-1dmj6EJA_ihcJkRFVUUtFaKyKb70WDqInkYXVjzJt20Ah-I"/>
+<div class="absolute inset-0 bg-surface/60 mix-blend-multiply"></div>
+</div>
+<div class="p-6">
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2">CLOUD_WATCHER</h3>
+<p class="text-on-surface-variant text-body-md mb-4">Serverless infrastructure monitoring tool with real-time alerting.</p>
+<div class="flex gap-2 mb-4 flex-wrap">
+<span class="text-label-sm font-code-md text-surface-tint">#Go</span>
+<span class="text-label-sm font-code-md text-surface-tint">#AWS</span>
+<span class="text-label-sm font-code-md text-surface-tint">#Terraform</span>
+</div>
+<a class="text-surface-tint font-code-md flex items-center gap-2 hover:underline" href="projects.html">
+                            EXECUTE_SRC <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Experience -->
+<section class="py-section-gap-mobile md:py-section-gap" id="history">
+<h2 class="font-headline-md text-headline-md text-surface-tint mb-12 uppercase tracking-widest flex items-center gap-2">
+<span class="w-8 h-[2px] bg-surface-tint"></span> 03. HISTORY.LOG
+            </h2>
+<div class="relative border-l border-subtle ml-4 pl-10 space-y-12">
+<!-- Log Entry 1 -->
+<div class="relative">
+<div class="absolute -left-[45px] top-1 w-[10px] h-[10px] bg-surface-tint rounded-full shadow-[0_0_10px_#4AF626]"></div>
+<span class="text-label-sm font-code-md text-secondary block mb-2">[ 2023 - PRESENT ]</span>
+<h3 class="text-headline-md font-headline-md text-on-surface">LEAD DEVELOPER @ UNIVERSITY TECH LAB</h3>
+<p class="text-on-surface-variant text-body-md mt-4">
+                        Spearheading the development of open-source research tools. Optimized data processing pipelines by 40% using concurrent programming patterns in Go.
+                    </p>
+</div>
+<!-- Log Entry 2 -->
+<div class="relative">
+<div class="absolute -left-[45px] top-1 w-[10px] h-[10px] bg-surface-tint/50 rounded-full"></div>
+<span class="text-label-sm font-code-md text-secondary block mb-2">[ 2022 - 2023 ]</span>
+<h3 class="text-headline-md font-headline-md text-on-surface">SOFTWARE ENGINEERING INTERN @ DATAFLOW_CO</h3>
+<p class="text-on-surface-variant text-body-md mt-4">
+                        Implemented microservices architecture for real-time telemetry. Migrated legacy monolith systems to Dockerized environments.
+                    </p>
+</div>
+<!-- Log Entry 3 -->
+<div class="relative">
+<div class="absolute -left-[45px] top-1 w-[10px] h-[10px] bg-surface-tint/30 rounded-full"></div>
+<span class="text-label-sm font-code-md text-secondary block mb-2">[ 2021 - 2022 ]</span>
+<h3 class="text-headline-md font-headline-md text-on-surface">CS TEACHING ASSISTANT</h3>
+<p class="text-on-surface-variant text-body-md mt-4">
+                        Mentored 100+ students in Data Structures and Algorithms. Automated grading systems using Python scripts.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Contact -->
+<section class="py-section-gap-mobile md:py-section-gap mb-20" id="contact"><div class="max-w-max-width mx-auto px-gutter">
+<h2 class="font-headline-md text-headline-md text-surface-tint mb-12 uppercase tracking-widest flex items-center gap-2">
+<span class="w-8 h-[2px] bg-surface-tint"></span> 04. GET_IN_TOUCH
+  </h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- LinkedIn -->
+<a class="terminal-window p-8 flex flex-col items-center justify-center gap-4 rounded-lg border-subtle hover:glow-green transition-all duration-300 group" href="https://www.linkedin.com/in/danya-damaris-565434391?utm_source=share_via&utm_content=profile&utm_medium=member_android">
+<span class="material-symbols-outlined text-4xl text-surface-tint group-hover:scale-110 transition-transform">account_circle</span>
+<span class="font-code-md text-on-surface uppercase tracking-widest">LinkedIn</span>
+<span class="text-[10px] text-on-surface-variant/50">/in/danya-damaris</span>
+</a>
+<!-- GitHub -->
+<a class="terminal-window p-8 flex flex-col items-center justify-center gap-4 rounded-lg border-subtle hover:glow-green transition-all duration-300 group" href="https://github.com/danyaSoe">
+<span class="material-symbols-outlined text-4xl text-surface-tint group-hover:scale-110 transition-transform">terminal</span>
+<span class="font-code-md text-on-surface uppercase tracking-widest">GitHub</span>
+<span class="text-[10px] text-on-surface-variant/50">/danyaSoe</span>
+</a>
+<!-- Instagram -->
+<a class="terminal-window p-8 flex flex-col items-center justify-center gap-4 rounded-lg border-subtle hover:glow-green transition-all duration-300 group" href="https://www.instagram.com/damarisdanya?igsh=bzYwajU1YmNodXFw">
+<span class="material-symbols-outlined text-4xl text-surface-tint group-hover:scale-110 transition-transform">photo_camera</span>
+<span class="font-code-md text-on-surface uppercase tracking-widest">Instagram</span>
+<span class="text-[10px] text-on-surface-variant/50">@damarisdanya</span>
+</a>
+<!-- Email -->
+<a class="terminal-window p-8 flex flex-col items-center justify-center gap-4 rounded-lg border-subtle hover:glow-green transition-all duration-300 group" href="mailto:danyasoe@gmail.com">
+<span class="material-symbols-outlined text-4xl text-surface-tint group-hover:scale-110 transition-transform">mail</span>
+<span class="font-code-md text-on-surface uppercase tracking-widest">Email</span>
+<span class="text-[10px] text-on-surface-variant/50">danyasoe@gmail.com</span>
+</a>
+</div>
+</div></section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface border-t border-outline-variant py-12">
+<div class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-max-width mx-auto gap-8">
+<div class="text-label-sm font-code-md text-surface-tint flex flex-col items-center md:items-start">
+<span>© 2024 TERMINAL_SYSTEMS. ALL RIGHTS RESERVED.</span>
+<span class="text-on-surface-variant/50 text-[10px] mt-1">v1.0.42_STABLE_BUILD</span>
+</div>
+<div class="flex gap-8">
+<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors font-label-sm flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[18px]">terminal</span> GITHUB
+                </a>
+<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors font-label-sm flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[18px]">account_circle</span> LINKEDIN
+                </a>
+<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors font-label-sm flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[18px]">code</span> SOURCE
+                </a>
+</div>
+</div>
+</footer>
+<script>
+        // Tagline typing animation
+        const taglineText = "Computer Science Student • Software Developer • Tech Enthusiast";
+        const taglineElement = document.getElementById('tagline');
+        let i = 0;
+
+        function typeWriter() {
+            if (i < taglineText.length) {
+                taglineElement.innerHTML += taglineText.charAt(i);
+                i++;
+                setTimeout(typeWriter, 50);
+            }
+        }
+        
+        // Start typing after boot message
+        setTimeout(typeWriter, 1000);
+
+        // Form submission simulation
+        const form = document.getElementById('contact-form');
+        const feedback = document.getElementById('form-feedback');
+
+        if (form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                feedback.classList.remove('hidden');
+                const messages = [
+                    "Negotiating handshake...",
+                    "Enciphering payload...",
+                    "Rerouting through proxy nodes...",
+                    "Transmitting packet [74kb]...",
+                    "Packet delivered successfully."
+                ];
+                
+                let msgIndex = 0;
+                const interval = setInterval(() => {
+                    if (msgIndex < messages.length) {
+                        feedback.innerText = "> " + messages[msgIndex];
+                        msgIndex++;
+                    } else {
+                        clearInterval(interval);
+                        form.reset();
+                        setTimeout(() => {
+                            feedback.innerText = "> System Ready.";
+                        }, 2000);
+                    }
+                }, 800);
+            });
+        }
+
+        // Sticky Navigation Active State logic - updated for external links
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let current = "";
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                link.classList.remove('text-surface-tint', 'font-bold', 'border-b-2', 'border-surface-tint', 'pb-1');
+                link.classList.add('text-on-surface-variant', 'font-medium');
+                
+                // Only highlight if current page matches section or if it's explicitly internal anchor logic
+                if (href.includes(current) && current !== "") {
+                    link.classList.add('text-surface-tint', 'font-bold', 'border-b-2', 'border-surface-tint', 'pb-1');
+                    link.classList.remove('text-on-surface-variant', 'font-medium');
+                }
+            });
+        });
+    </script>
+```</body></html>
