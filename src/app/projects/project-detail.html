@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SYS_PORTFOLIO_V1.0 | PROJECT_DECRYPT</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100..900&family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-highest": "#333535",
+            "surface-bright": "#38393a",
+            "tertiary-fixed-dim": "#eeb9bd",
+            "outline-variant": "#3c4b36",
+            "surface-container": "#1e2020",
+            "tertiary": "#ffefef",
+            "surface": "#121414",
+            "border-subtle": "#30363D",
+            "primary-container": "#4af626",
+            "on-secondary-fixed-variant": "#683d00",
+            "primary": "#d4ffc1",
+            "surface-dim": "#121414",
+            "on-tertiary-fixed-variant": "#623c40",
+            "text-muted": "#B8B8B8",
+            "secondary-container": "#ed9000",
+            "bg-surface": "#15181E",
+            "on-background": "#e2e2e2",
+            "on-primary-fixed-variant": "#0c5300",
+            "surface-tint": "#34e507",
+            "primary-fixed": "#79ff59",
+            "surface-variant": "#333535",
+            "on-secondary-container": "#583300",
+            "on-primary-container": "#136c00",
+            "inverse-primary": "#136e00",
+            "bg-main": "#0B0C0F",
+            "on-secondary-fixed": "#2c1700",
+            "on-primary": "#063900",
+            "on-primary-fixed": "#022100",
+            "on-error": "#690005",
+            "error-container": "#93000a",
+            "glow-green": "rgba(74, 246, 38, 0.25)",
+            "surface-container-low": "#1a1c1c",
+            "tertiary-container": "#ffc9cd",
+            "background": "#121414",
+            "on-error-container": "#ffdad6",
+            "secondary-fixed": "#ffdcbc",
+            "outline": "#86957d",
+            "inverse-surface": "#e2e2e2",
+            "error": "#ffb4ab",
+            "on-tertiary": "#48272a",
+            "on-surface-variant": "#bbccb0",
+            "tertiary-fixed": "#ffdadc",
+            "surface-container-lowest": "#0c0f0f",
+            "primary-fixed-dim": "#34e507",
+            "surface-container-high": "#282a2b",
+            "inverse-on-surface": "#2f3131",
+            "secondary": "#ffb86b",
+            "on-surface": "#e2e2e2",
+            "on-secondary": "#492900",
+            "secondary-fixed-dim": "#ffb86b",
+            "on-tertiary-fixed": "#301216",
+            "on-tertiary-container": "#7b5256"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "gutter": "24px",
+            "max-width": "1200px",
+            "container-padding": "16px",
+            "section-gap": "120px",
+            "section-gap-mobile": "64px"
+          },
+          "fontFamily": {
+            "headline-md": ["IBM Plex Mono"],
+            "display-lg-mobile": ["IBM Plex Mono"],
+            "body-md": ["Inter"],
+            "label-sm": ["JetBrains Mono"],
+            "display-lg": ["IBM Plex Mono"],
+            "code-md": ["JetBrains Mono"],
+            "body-lg": ["Inter"]
+          },
+          "fontSize": {
+            "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+            "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+            "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+            "label-sm": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+            "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "code-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+            "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    /* Scanline Effect */
+    .scanlines::before {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+      z-index: 200;
+      background-size: 100% 4px, 3px 100%;
+      pointer-events: none;
+    }
+
+    .crt-flicker {
+      animation: flicker 0.15s infinite;
+    }
+
+    @keyframes flicker {
+      0% { opacity: 0.985; }
+      5% { opacity: 0.95; }
+      10% { opacity: 0.99; }
+      15% { opacity: 0.96; }
+      20% { opacity: 1; }
+      25% { opacity: 0.97; }
+      100% { opacity: 1; }
+    }
+
+    .glow-text {
+      text-shadow: 0 0 8px rgba(52, 229, 7, 0.6);
+    }
+
+    .pixel-grid {
+      background-image: radial-gradient(rgba(52, 229, 7, 0.05) 1px, transparent 0);
+      background-size: 20px 20px;
+    }
+
+    .terminal-cursor::after {
+      content: "_";
+      animation: blink 1s step-end infinite;
+    }
+
+    @keyframes blink {
+      from, to { opacity: 1; }
+      50% { opacity: 0; }
+    }
+  </style>
+</head>
+<body class="bg-main text-on-surface font-body-md selection:bg-surface-tint selection:text-on-primary overflow-hidden">
+<!-- Background Texture Layer -->
+<div class="fixed inset-0 pointer-events-none z-[100] scanlines opacity-30"></div>
+<div class="fixed inset-0 pointer-events-none z-[50] pixel-grid"></div>
+<!-- Main Background Container (Simulating the App behind the modal) -->
+<main class="min-h-screen p-gutter flex items-center justify-center">
+<div class="text-center opacity-20">
+<h2 class="font-headline-md text-headline-md text-surface-tint">SYSTEM_IDLE...</h2>
+<p class="font-code-md text-code-md">WAITING FOR OVERRIDE</p>
+</div>
+</main>
+<!-- Modal Overlay -->
+<div class="fixed inset-0 z-[300] flex items-center justify-center p-4 md:p-gutter bg-black/60 backdrop-blur-sm" id="modal-container">
+<!-- Modal Window (Terminal Styled) -->
+<div class="relative w-full max-w-max-width bg-surface border border-outline-variant shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
+<!-- Terminal Header Bar -->
+<div class="flex items-center justify-between px-4 py-2 bg-surface-container-highest border-b border-outline-variant">
+<div class="flex items-center gap-4">
+<div class="flex gap-1.5">
+<div class="w-2.5 h-2.5 rounded-full bg-error/40"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-secondary/40"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-surface-tint/40"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-widest">DECRYPTED_FILE_V2.04.sys</span>
+</div>
+<button class="font-label-sm text-label-sm text-on-surface-variant hover:text-surface-tint transition-colors flex items-center gap-1 group" onclick="document.getElementById('modal-container').classList.add('hidden')">
+<span class="material-symbols-outlined text-[16px]">close</span>
+<span class="hidden md:inline group-hover:underline">TERMINATE_SESSION</span>
+</button>
+</div>
+<!-- Scrollable Content Area -->
+<div class="max-h-[870px] overflow-y-auto custom-scrollbar p-6 md:p-10">
+<!-- Top Metadata Row -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4 border-b border-outline-variant pb-6">
+<div class="space-y-1">
+<div class="flex items-center gap-2 text-surface-tint">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">security</span>
+<span class="font-code-md text-code-md tracking-tighter">ACCESS_GRANTED: LEVEL_4_CLEARANCE</span>
+</div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-surface-tint glow-text uppercase leading-none tracking-tighter">
+              NEURAL_OBSERVER
+            </h1>
+</div>
+<div class="text-left md:text-right font-code-md text-code-md text-on-surface-variant">
+<p>TIMESTAMP: 2024.08.12.04:22</p>
+<p>LOCATION: ENCRYPTED_SERVER_NODE_8</p>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+<!-- Left Column: Visuals & Tech Stack -->
+<div class="lg:col-span-7 space-y-8">
+<!-- Featured Image -->
+<div class="relative group border border-outline-variant bg-surface-container-low p-1 aspect-video overflow-hidden">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" data-alt="A futuristic cybersecurity dashboard display showing intricate network maps and glowing data nodes in shades of vibrant neon green and deep terminal black. The lighting is low and atmospheric, emphasizing the luminous code fragments and data visualizations that ripple across the screen. The style is hyper-technical and sleek, evoking a high-stakes digital surveillance environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAmR-KqT0LwDRozNfPPFH_fArT4GzETk2azNrCXw7xTlCKFmjhhRiiVHGWmntf6KpdRuest8f117WbvEquu9pzxP03T2PQDrBXGEfxp7X-c4EzHOxSOLqyikDnplOq_VhBWYIt9ic1DnzzQvmIVFN278lIUBy7cIsxFByTxh7_BPBZ1obBqC8Mt2TuRExTLMCWpcvSLxYBvXHZ2INp2omiZOlXZ8imT02FeGDIlLJB1sljsuXAgGz95I5h04TikMcud9Klxsubvn4"/>
+<div class="absolute top-4 left-4 bg-surface/90 border border-surface-tint px-2 py-1 flex items-center gap-2">
+<div class="w-2 h-2 bg-surface-tint animate-pulse"></div>
+<span class="font-label-sm text-label-sm text-surface-tint uppercase">Live_Feed_01</span>
+</div>
+<div class="absolute inset-0 border-[20px] border-transparent group-hover:border-surface-tint/5 transition-all duration-500 pointer-events-none"></div>
+</div>
+<!-- Technical Summary -->
+<div class="bg-surface-container-high/50 p-6 border border-outline-variant">
+<h3 class="font-headline-md text-headline-md text-surface-tint mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined">description</span>
+                EXECUTIVE_SUMMARY
+              </h3>
+<div class="space-y-4 font-body-md text-on-surface-variant leading-relaxed">
+<p>
+                  NEURAL_OBSERVER is an advanced computer vision framework designed for real-time temporal analysis and anomaly detection in high-density data environments. Leveraging proprietary neural architectures, the system identifies patterns invisible to standard heuristic-based surveillance protocols.
+                </p>
+<p>
+                  Phase 1 involved the deployment of specialized <span class="text-primary font-code-md underline decoration-surface-tint/30">OpenCV</span> wrappers to stabilize incoming optic streams. Phase 2 integrated a <span class="text-primary font-code-md">PyTorch</span>-based recurrent network for predictive behavioral modeling.
+                </p>
+</div>
+</div>
+</div>
+<!-- Right Column: Specs & Actions -->
+<div class="lg:col-span-5 space-y-8">
+<!-- Tech Stack Bento -->
+<div class="space-y-4">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest border-b border-outline-variant pb-1 w-fit">Tech_Environment</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container-highest border border-outline-variant text-surface-tint font-code-md text-code-md hover:bg-surface-tint hover:text-on-primary transition-colors cursor-default">Python_3.11</span>
+<span class="px-3 py-1 bg-surface-container-highest border border-outline-variant text-surface-tint font-code-md text-code-md hover:bg-surface-tint hover:text-on-primary transition-colors cursor-default">OpenCV</span>
+<span class="px-3 py-1 bg-surface-container-highest border border-outline-variant text-surface-tint font-code-md text-code-md hover:bg-surface-tint hover:text-on-primary transition-colors cursor-default">PyTorch</span>
+<span class="px-3 py-1 bg-surface-container-highest border border-outline-variant text-surface-tint font-code-md text-code-md hover:bg-surface-tint hover:text-on-primary transition-colors cursor-default">CUDA</span>
+<span class="px-3 py-1 bg-surface-container-highest border border-outline-variant text-surface-tint font-code-md text-code-md hover:bg-surface-tint hover:text-on-primary transition-colors cursor-default">FastAPI</span>
+<span class="px-3 py-1 bg-surface-container-highest border border-outline-variant text-surface-tint font-code-md text-code-md hover:bg-surface-tint hover:text-on-primary transition-colors cursor-default">Redis</span>
+</div>
+</div>
+<!-- Progress Visualization -->
+<div class="space-y-6">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest border-b border-outline-variant pb-1 w-fit">Deployment_Status</p>
+<div class="space-y-4">
+<div class="space-y-1">
+<div class="flex justify-between font-code-md text-code-md text-on-surface">
+<span>NEURAL_LOAD</span>
+<span>87%</span>
+</div>
+<div class="w-full h-3 bg-surface-container-highest border border-outline-variant relative overflow-hidden">
+<div class="absolute top-0 left-0 h-full bg-surface-tint" style="width: 87%"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between font-code-md text-code-md text-on-surface">
+<span>UPTIME_RELIABILITY</span>
+<span>█████████░</span>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between font-code-md text-code-md text-on-surface">
+<span>THREAT_LEVEL</span>
+<span class="text-error crt-flicker">CRITICAL</span>
+</div>
+</div>
+</div>
+</div>
+<!-- CTA Buttons -->
+<div class="flex flex-col gap-3 pt-6">
+<a class="group relative flex items-center justify-between px-6 py-4 bg-surface-tint text-on-primary font-headline-md text-headline-md border border-surface-tint hover:bg-transparent hover:text-surface-tint transition-all duration-300 overflow-hidden active:scale-[0.98]" href="#">
+<span class="relative z-10 flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">terminal</span>
+                  LAUNCH_PRODUCTION
+                </span>
+<span class="material-symbols-outlined relative z-10 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+<div class="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+</a>
+<a class="group flex items-center justify-between px-6 py-4 border border-outline-variant text-on-surface-variant font-headline-md text-headline-md hover:border-surface-tint hover:text-surface-tint hover:glow-green transition-all duration-300 active:scale-[0.98]" href="#">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined">source</span>
+                  SOURCE_CODE
+                </span>
+<span class="font-code-md text-[12px] opacity-40 group-hover:opacity-100">[GIT_PUSH_OK]</span>
+</a>
+</div>
+<!-- System Message -->
+<div class="p-4 bg-error-container/10 border border-error/20 flex gap-3">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">warning</span>
+<p class="font-label-sm text-label-sm text-error/80 leading-tight">
+                WARNING: Unauthorized replication of this neural architecture is punishable under Galactic Code 801.C.
+              </p>
+</div>
+</div>
+</div>
+<!-- Detailed Features Section -->
+<div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="p-4 border border-outline-variant hover:border-surface-tint/50 transition-colors group">
+<span class="font-code-md text-surface-tint block mb-2">> 01_ASYNC_SYNC</span>
+<p class="font-body-md text-on-surface-variant text-sm">Hardware-accelerated frame processing via custom GPU kernels for sub-millisecond latency.</p>
+</div>
+<div class="p-4 border border-outline-variant hover:border-surface-tint/50 transition-colors group">
+<span class="font-code-md text-surface-tint block mb-2">> 02_DATA_DRIVEN</span>
+<p class="font-body-md text-on-surface-variant text-sm">Automated feature engineering pipeline extracting 4,096 distinct vectors per frame analyze.</p>
+</div>
+<div class="p-4 border border-outline-variant hover:border-surface-tint/50 transition-colors group">
+<span class="font-code-md text-surface-tint block mb-2">> 03_ENCRYPTED</span>
+<p class="font-body-md text-on-surface-variant text-sm">End-to-end TLS 1.3 encryption for all transmitted neural weights and optic metadata.</p>
+</div>
+</div>
+<!-- Command Line Footer -->
+<div class="mt-12 pt-6 border-t border-outline-variant">
+<div class="bg-black/40 p-4 font-code-md text-code-md text-surface-tint/70">
+<p><span class="text-surface-tint">guest@terminal:</span><span class="text-primary-fixed">~</span>$ decrypt project --target=neural_observer</p>
+<p>Analyzing hashes... [DONE]</p>
+<p>Injecting dependencies... [DONE]</p>
+<p class="terminal-cursor">Session active. Ready for interaction</p>
+</div>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="px-6 py-4 bg-surface-container-low border-t border-outline-variant flex flex-col md:flex-row gap-4 items-center justify-between">
+<p class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-surface-tint animate-pulse"></span>
+          ENCRYPTION_STABLE
+        </p>
+<button class="w-full md:w-auto px-10 py-2 border border-error/50 text-error hover:bg-error hover:text-on-error font-headline-md text-[14px] tracking-widest transition-all duration-150 active:scale-95" onclick="document.getElementById('modal-container').classList.add('hidden')">
+          EXIT_PROCEDURE
+        </button>
+</div>
+</div>
+</div>
+<script>
+    // Micro-interaction for the "CRT flicker"
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.getElementById('modal-container').classList.add('hidden');
+      }
+    });
+
+    // Random Terminal Glitch Effect
+    setInterval(() => {
+      const modal = document.querySelector('.glow-text');
+      if (modal && Math.random() > 0.95) {
+        modal.classList.add('crt-flicker');
+        setTimeout(() => modal.classList.remove('crt-flicker'), 150);
+      }
+    }, 2000);
+  </script>
+</body></html>
