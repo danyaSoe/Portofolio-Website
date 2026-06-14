@@ -54,26 +54,46 @@ export default function Contact() {
           <ContactCard
             icon="account_circle"
             label="LinkedIn"
+<<<<<<< HEAD
             handle="/in/danya-damaris"
             href="https://linkedin.com/in/danya-damaris"
+=======
+            handle="/in/alex-rivera"
+            href="https://linkedin.com/in/alex-rivera"
+>>>>>>> fe6de1454afd9b75b0ead08818a97d05e73c3169
           />
           <ContactCard
             icon="terminal"
             label="GitHub"
+<<<<<<< HEAD
             handle="/danyaSoe"
             href="https://github.com/danyaSoe"
+=======
+            handle="/arivera-dev"
+            href="https://github.com/arivera-dev"
+>>>>>>> fe6de1454afd9b75b0ead08818a97d05e73c3169
           />
           <ContactCard
             icon="photo_camera"
             label="Instagram"
+<<<<<<< HEAD
             handle="@damarisdanya"
             href="https://instagram.com/damarisdanya"
+=======
+            handle="@sys_rivera"
+            href="https://instagram.com/sys_rivera"
+>>>>>>> fe6de1454afd9b75b0ead08818a97d05e73c3169
           />
           <ContactCard
             icon="mail"
             label="Email"
+<<<<<<< HEAD
             handle="danyasoe@gmail.com"
             href="mailto:danyasoe@gmail.com"
+=======
+            handle="alex@terminal.sys"
+            href="mailto:alex@terminal.sys"
+>>>>>>> fe6de1454afd9b75b0ead08818a97d05e73c3169
           />
         </div>
       </section>

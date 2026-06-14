@@ -282,5 +282,9 @@ This project is open source. Feel free to use it as a template for your own port
 
 ## Author
 
+<<<<<<< HEAD
 Danya Damaris - Terminal Systems
+=======
+Alex Rivera - Terminal Systems
+>>>>>>> fe6de1454afd9b75b0ead08818a97d05e73c3169
 © 2024 All Rights Reserved

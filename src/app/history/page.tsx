@@ -1,7 +1,10 @@
 'use client';
 
+<<<<<<< HEAD
 import { historyEntries } from '@/lib/historyData';
 
+=======
+>>>>>>> fe6de1454afd9b75b0ead08818a97d05e73c3169
 export default function History() {
   return (
     <main className="pt-32 pb-section-gap px-gutter max-w-max-width mx-auto">
@@ -12,6 +15,7 @@ export default function History() {
 
       {/* Timeline */}
       <div className="relative border-l border-subtle ml-4 pl-10 space-y-12 max-w-2xl">
+<<<<<<< HEAD
         {historyEntries.map((entry, index) => {
           const opacityClass = index === 0 ? 'opacity-100' : index === 1 ? 'opacity-75' : index === 2 ? 'opacity-70' : 'opacity-50';
           return (
@@ -33,6 +37,59 @@ export default function History() {
             </div>
           );
         })}
+=======
+        {[
+          {
+            period: '[ 2023 - PRESENT ]',
+            title: 'LEAD DEVELOPER @ UNIVERSITY TECH LAB',
+            description: 'Spearheading the development of open-source research tools. Optimized data processing pipelines by 40% using concurrent programming patterns in Go.',
+            opacity: 'opacity-100',
+            details: [
+              'Led a team of 5 engineers in building distributed systems',
+              'Published 3 research papers on parallel computing',
+              'Mentored 12 junior developers',
+            ],
+          },
+          {
+            period: '[ 2022 - 2023 ]',
+            title: 'SOFTWARE ENGINEERING INTERN @ DATAFLOW_CO',
+            description: 'Implemented microservices architecture for real-time telemetry. Migrated legacy monolith systems to Dockerized environments.',
+            opacity: 'opacity-50',
+            details: [
+              'Designed and implemented 4 microservices',
+              'Reduced deployment time by 60%',
+              'Implemented CI/CD pipeline using GitHub Actions',
+            ],
+          },
+          {
+            period: '[ 2021 - 2022 ]',
+            title: 'CS TEACHING ASSISTANT',
+            description: 'Mentored 100+ students in Data Structures and Algorithms. Automated grading systems using Python scripts.',
+            opacity: 'opacity-30',
+            details: [
+              'Taught 3 sections of advanced algorithms',
+              'Created automated grading system for 200+ students',
+              'Developed comprehensive study materials',
+            ],
+          },
+        ].map((entry, index) => (
+          <div key={index} className="relative">
+            <div className={`absolute -left-[45px] top-1 w-[10px] h-[10px] bg-surface-tint rounded-full shadow-[0_0_10px_#4AF626] ${entry.opacity}`}></div>
+            <span className="text-label-sm font-code-md text-secondary block mb-2">{entry.period}</span>
+            <h3 className="text-headline-md font-headline-md text-on-surface">{entry.title}</h3>
+            <p className="text-on-surface-variant text-body-md mt-4">{entry.description}</p>
+            
+            <div className="mt-6 pl-4 border-l border-outline-variant/50 space-y-2">
+              {entry.details.map((detail, idx) => (
+                <div key={idx} className="flex items-start gap-3 text-on-surface-variant text-body-md">
+                  <span className="text-surface-tint mt-1">▸</span>
+                  <span>{detail}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+>>>>>>> fe6de1454afd9b75b0ead08818a97d05e73c3169
       </div>
 
       {/* Stats Section */}
