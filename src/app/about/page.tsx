@@ -11,7 +11,7 @@ export default function About() {
           <div className="absolute -inset-2 bg-surface-tint/20 rounded-lg blur-lg group-hover:bg-surface-tint/30 transition-all duration-500"></div>
           <div className="relative terminal-window p-1 rounded-lg overflow-hidden border-2 border-surface-tint/50 shadow-2xl">
             <Image
-              alt="Alex Rivera"
+              alt="Danya Damaris"
               src="https://lh3.googleusercontent.com/aida/AP1WRLtJrmfTYgh4UqbnAK2IJckWULaErbHDi391aRlemcyYQC2Y9NrzbDPaqrGq18JgP-m0trDtWcEz5Vb95WoLbAydDP2QSvgELZaAs-7m-oM8ytjOweKufgQiBBPMb4x_oHkUbOw1PbkfMw4qQwWd8PYjdI7EF2Pl-14EwJ0mBZErgqV-9Lvt6ZZEY2aMQUKw1UFtGvdTFBknCMtAEyHb8Jlou_jroFSTBnGhcevApONrlMCAfzhS_HU6aMY"
               width={400}
               height={500}
@@ -33,7 +33,7 @@ export default function About() {
           </h1>
           <div className="terminal-window p-6 rounded-lg border-l-4 border-l-surface-tint">
             <p className="font-body-lg text-body-lg text-on-surface-variant mb-6 leading-relaxed">
-              &gt; I am Alex Rivera, a senior software engineer specializing in high-performance distributed systems and modern UI architectures. My approach blends the rigorous technical precision of low-level systems with the aesthetic elegance of retro-futuristic design.
+              &gt; I am Danya Damaris, a senior software engineer specializing in high-performance distributed systems and modern UI architectures. My approach blends the rigorous technical precision of low-level systems with the aesthetic elegance of retro-futuristic design.
             </p>
             <div className="flex flex-wrap gap-4">
               <button className="px-6 py-2 terminal-window font-code-md text-label-sm hover:text-surface-tint hover:glow-green transition-all duration-150 active:scale-95 group">

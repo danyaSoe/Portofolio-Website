@@ -282,5 +282,5 @@ This project is open source. Feel free to use it as a template for your own port
 
 ## Author
 
-Alex Rivera - Terminal Systems
+Danya Damaris - Terminal Systems
 © 2024 All Rights Reserved

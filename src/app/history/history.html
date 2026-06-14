@@ -196,62 +196,7 @@
 <div class="relative">
 <!-- Timeline Axis -->
 <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 h-full w-px bg-outline-variant"></div>
-<div class="space-y-16 relative">
-<!-- Timeline Entry 1 -->
-<div class="flex flex-col md:flex-row items-start md:items-center justify-between w-full group cursor-pointer" onclick="openModal('entry-1')">
-<div class="w-full md:w-[45%] md:text-right order-2 md:order-1 mt-4 md:mt-0">
-<div class="bg-surface-container border border-outline-variant p-6 hover:border-surface-tint transition-all duration-300 hover:glow-green group-hover:crt-flicker">
-<span class="font-code-md text-surface-tint text-label-sm">2023 - PRESENT</span>
-<h3 class="font-headline-md text-headline-md mt-1 mb-2">SENIOR SYSTEMS ARCHITECT</h3>
-<p class="text-on-surface-variant line-clamp-2">Leading the development of distributed ledger systems for high-frequency financial data processing.</p>
-</div>
-</div>
-<div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-8 h-8 flex items-center justify-center bg-surface border-2 border-surface-tint rounded-full z-10 order-1 md:order-2 group-hover:scale-125 transition-transform">
-<div class="w-2 h-2 bg-surface-tint rounded-full shadow-[0_0_8px_#34e507]"></div>
-</div>
-<div class="w-full md:w-[45%] order-3"></div>
-</div>
-<!-- Timeline Entry 2 -->
-<div class="flex flex-col md:flex-row items-start md:items-center justify-between w-full group cursor-pointer" onclick="openModal('entry-2')">
-<div class="w-full md:w-[45%] order-2 md:order-1"></div>
-<div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-8 h-8 flex items-center justify-center bg-surface border-2 border-outline-variant rounded-full z-10 order-1 md:order-2 group-hover:border-surface-tint group-hover:scale-125 transition-all">
-<div class="w-2 h-2 bg-outline-variant group-hover:bg-surface-tint rounded-full group-hover:shadow-[0_0_8px_#34e507]"></div>
-</div>
-<div class="w-full md:w-[45%] order-3 mt-4 md:mt-0">
-<div class="bg-surface-container border border-outline-variant p-6 hover:border-surface-tint transition-all duration-300 hover:glow-green group-hover:crt-flicker">
-<span class="font-code-md text-surface-tint text-label-sm">2021 - 2023</span>
-<h3 class="font-headline-md text-headline-md mt-1 mb-2">FULL STACK OPERATIVE</h3>
-<p class="text-on-surface-variant line-clamp-2">Spearheaded the migration of legacy monolithic infrastructures to containerized cloud-native microservices.</p>
-</div>
-</div>
-</div>
-<!-- Timeline Entry 3 -->
-<div class="flex flex-col md:flex-row items-start md:items-center justify-between w-full group cursor-pointer" onclick="openModal('entry-3')">
-<div class="w-full md:w-[45%] md:text-right order-2 md:order-1 mt-4 md:mt-0">
-<div class="bg-surface-container border border-outline-variant p-6 hover:border-surface-tint transition-all duration-300 hover:glow-green group-hover:crt-flicker">
-<span class="font-code-md text-surface-tint text-label-sm">2019 - 2021</span>
-<h3 class="font-headline-md text-headline-md mt-1 mb-2">INTERFACE SPECIALIST</h3>
-<p class="text-on-surface-variant line-clamp-2">Developed high-performance dashboard UI for real-time telemetry tracking in aerospace applications.</p>
-</div>
-</div>
-<div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-8 h-8 flex items-center justify-center bg-surface border-2 border-outline-variant rounded-full z-10 order-1 md:order-2 group-hover:border-surface-tint group-hover:scale-125 transition-all">
-<div class="w-2 h-2 bg-outline-variant group-hover:bg-surface-tint rounded-full group-hover:shadow-[0_0_8px_#34e507]"></div>
-</div>
-<div class="w-full md:w-[45%] order-3"></div>
-</div>
-<!-- Timeline Entry 4 -->
-<div class="flex flex-col md:flex-row items-start md:items-center justify-between w-full group cursor-pointer" onclick="openModal('entry-4')">
-<div class="w-full md:w-[45%] order-2 md:order-1"></div>
-<div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-8 h-8 flex items-center justify-center bg-surface border-2 border-outline-variant rounded-full z-10 order-1 md:order-2 group-hover:border-surface-tint group-hover:scale-125 transition-all">
-<div class="w-2 h-2 bg-outline-variant group-hover:bg-surface-tint rounded-full group-hover:shadow-[0_0_8px_#34e507]"></div>
-</div>
-<div class="w-full md:w-[45%] order-3 mt-4 md:mt-0">
-<div class="bg-surface-container border border-outline-variant p-6 hover:border-surface-tint transition-all duration-300 hover:glow-green group-hover:crt-flicker">
-<span class="font-code-md text-surface-tint text-label-sm">2017 - 2019</span>
-<h3 class="font-headline-md text-headline-md mt-1 mb-2">JUNIOR CODE MONKEY</h3>
-<p class="text-on-surface-variant line-clamp-2">Core contributor to open-source encryption libraries and security-first communication protocols.</p>
-</div>
-</div>
+<div class="space-y-16 relative" id="timeline-list">
 </div>
 </div>
 </div>
@@ -330,48 +275,225 @@
 </div>
 </footer>
 <script>
-        const entryData = {
-            'entry-1': {
-                title: 'SENIOR_SYSTEMS_ARCHITECT.LOG',
-                desc: 'Overseeing the architectural integrity of high-frequency trading platforms. Focused on sub-millisecond latency and cryptographic security protocols for decentralized transaction verification.',
+        const timelineEntries = [
+            {
+                id: 'entry-16',
+                year: '2026 - PRESENT',
+                experience: 'Sekolah Mentor KAT ITB 2026',
+                role: 'Head of Materials and Methods',
+                desc: 'Training program for future mentors of KAT ITB 2026.',
                 tasks: [
-                    '> Optimized C++ kernels for 40% throughput increase',
-                    '> Integrated zero-knowledge proof verification',
-                    '> Led a team of 12 tactical developers',
-                    '> Implemented hardware-accelerated monitoring'
+                    '> Design a curriculum for future mentors of KAT ITB 2026',
+                    '> Train mentors to provide necessary help to future mentors of KAT ITB 2026',
+                    '> Design a scoring matrix for the selection of future mentors of KAT ITB 2026'
                 ]
             },
-            'entry-2': {
-                title: 'FULL_STACK_OPERATIVE.LOG',
-                desc: 'Modernized core banking infrastructure by migrating from COBOL-based mainframes to a distributed microservices architecture using Go and Kubernetes.',
+            {
+                id: 'entry-15',
+                year: '2026 - PRESENT',
+                experience: 'DE HMIF ITB Prisma',
+                role: 'People Development Division Staff',
+                desc: 'Executive board of student union HMIF ITB.',
                 tasks: [
-                    '> Automated CI/CD pipelines via Jenkins/Spinnaker',
-                    '> Reduced server overhead by 2.5 million USD/year',
-                    '> Designed fault-tolerant messaging using Kafka',
-                    '> Refactored critical security authentication layers'
+                    '> Oversee and help the orientation of new HMIF ITB members',
+                    '> Oversee the selection of heads of organizing committees'
                 ]
             },
-            'entry-3': {
-                title: 'INTERFACE_SPECIALIST.LOG',
-                desc: 'Specialized in real-time visualization of satellite telemetry data. Created high-fidelity dashboards for ground control stations managing over 50 orbital assets.',
+            {
+                id: 'entry-14',
+                year: '2026',
+                experience: 'Wisuda April 2026 HMIF ITB',
+                role: 'Field Division Staff',
+                desc: 'Festivities to celebrate the graduation of HMIF ITB members.',
                 tasks: [
-                    '> Developed custom WebGL shader library for mapping',
-                    '> Achieved 60fps rendering on low-power hardware',
-                    '> Implemented tactile UI for rapid emergency response',
-                    '> Standardized design tokens across orbital fleet UI'
+                    '> Ensure the safety and comfort of HMIF ITB graduates during the graduation parade',
+                    '> Act as percussions during the graduation parade'
                 ]
             },
-            'entry-4': {
-                title: 'JUNIOR_CODE_MONKEY.LOG',
-                desc: 'Beginning of the terminal journey. Primary focus on security research and the implementation of robust end-to-end encryption for peer-to-peer messaging networks.',
+            {
+                id: 'entry-13',
+                year: '2026',
+                experience: 'Jazz Aula Timur 2026',
+                role: 'General Secretary',
+                desc: 'Yearly concert by ITBJazz showcasing the talents of members and guest stars.',
                 tasks: [
-                    '> Patched 14 critical security vulnerabilities',
-                    '> Contributed 500+ commits to core crypto libs',
-                    '> Developed unit testing suite for network layers',
-                    '> Documented API specifications for third-party integrators'
+                    '> Help the project officer with executive decisions',
+                    '> Provide administrative needs for organizing committee',
+                    '> Perform as a bass player for the opening band for Wijaya 80'
+                ]
+            },
+            {
+                id: 'entry-12',
+                year: '2025',
+                experience: 'Wisuda Oktober 2025 HMIF ITB',
+                role: 'Field Division Staff',
+                desc: 'Festivities to celebrate the graduation of HMIF ITB members.',
+                tasks: [
+                    '> Ensure the safety and comfort of HMIF ITB graduates during the graduation parade',
+                    '> Act as percussions during the graduation parade'
+                ]
+            },
+            {
+                id: 'entry-11',
+                year: '2025 - 2026',
+                experience: 'DE HMIF ITB Lakara',
+                role: 'People Development Division Intern',
+                desc: 'Executive board of student union HMIF ITB.',
+                tasks: [
+                    '> Organize a pre-orientation event for future HMIF ITB members',
+                    '> Oversee the selection of heads of organizing committees'
+                ]
+            },
+            {
+                id: 'entry-10',
+                year: '2025 - 2026',
+                experience: 'Kroyokeanjes 2025',
+                role: 'Vice Head of Mentor Development',
+                desc: 'Orientation for new members of student organization ITBJazz.',
+                tasks: [
+                    '> Train mentors to provide necessary help to future ITBJazz members'
+                ]
+            },
+            {
+                id: 'entry-9',
+                year: '2025',
+                experience: 'Dies Natalis ke-43 HMIF ITB',
+                role: 'Head of Event Organizer',
+                desc: 'Festivities to celebrate the 43rd anniversary of HMIF ITB.',
+                tasks: [
+                    '> Organize a ceremonial event to honour HMIF ITB',
+                    '> Organize a sharing and games session with alumni'
+                ]
+            },
+            {
+                id: 'entry-8',
+                year: '2025',
+                experience: 'Jazz Aula Barat #9',
+                role: 'Operations Division Staff',
+                desc: 'Yearly legacy concert by ITBJazz showcasing the talents of Ermy Kulit and Sandhy Sondoro.',
+                tasks: [
+                    '> Procure logistic needs for the event',
+                    '> Performed as a guitar player for the opening band'
+                ]
+            },
+            {
+                id: 'entry-7',
+                year: '2025 - 2026',
+                experience: 'BP ITBJazz #Jazzademia',
+                role: 'Vice Head of Curriculum',
+                desc: 'Executive board of student unit ITBJazz.',
+                tasks: [
+                    '> Produce The Catz Module, 4 documents containing fundamentals of piano, guitar, bass, and drums',
+                    '> Oversee the production of The Kroyokeanjes Lead Sheet, a document containing guidelines for orientation of future members of ITBJazz'
+                ]
+            },
+            {
+                id: 'entry-6',
+                year: '2025',
+                experience: 'KAT ITB 2025',
+                role: 'Mentor',
+                desc: 'Introductory period for new ITB students.',
+                tasks: [
+                    '> Guide new ITB students through orientation events',
+                    '> Provide necessary knowledge for new ITB students in order to become a member of KM ITB'
+                ]
+            },
+            {
+                id: 'entry-5',
+                year: '2025',
+                experience: 'Makrab STEI-K\'24',
+                role: 'Head of Operations',
+                desc: 'Excursion for first year students of Sekolah Teknologi Elektro dan Informatika - Komputasi ITB as a means of tying them together.',
+                tasks: [
+                    '> Provide consumption for participants',
+                    '> Procure sound and lighting systems for night gig'
+                ]
+            },
+            {
+                id: 'entry-4',
+                year: '2025',
+                experience: 'Jazz Aula Timur 2025',
+                role: 'Event Organizer Division Staff',
+                desc: 'Yearly concert by ITBJazz showcasing the talents of members and guest star, Teddy Adhitya.',
+                tasks: [
+                    '> Conceptualize a concert showcasing a combination of music genres and jazz',
+                    '> Operate the visuals of each performance'
+                ]
+            },
+            {
+                id: 'entry-3',
+                year: '2025',
+                experience: 'Impact 5.0',
+                role: 'Visual Design Division Staff',
+                desc: 'Math, physics, and informatics competition by the students of Sekolah Teknologi Elektro dan Informatika - Komputasi ITB.',
+                tasks: [
+                    '> Design graphic assets for physical and online publication of the event'
+                ]
+            },
+            {
+                id: 'entry-2',
+                year: '2025',
+                experience: 'GiG! 15: Jazztalgia',
+                role: 'Project Manager',
+                desc: 'Jazz gig by new members of ITBJazz.',
+                tasks: [
+                    '> Conceptualize an innovative concert',
+                    '> Plan and organize a profitable event in 1 month'
+                ]
+            },
+            {
+                id: 'entry-1',
+                year: '2025',
+                experience: 'Aku Masuk ITB 2025',
+                role: 'Music Division Staff',
+                desc: 'Introduction to public masses about ITB and it’s campus.',
+                tasks: [
+                    '> Write and produce the theme song'
                 ]
             }
-        };
+        ];
+
+        const entryData = Object.fromEntries(timelineEntries.map(entry => [
+            entry.id,
+            {
+                title: `${entry.experience.toUpperCase()} AS ${entry.role.toUpperCase()}`,
+                desc: entry.desc,
+                tasks: entry.tasks
+            }
+        ]));
+
+        const timelineList = document.getElementById('timeline-list');
+        if (timelineList) {
+            timelineEntries.slice(0, 3).forEach((entry, index) => {
+                const isLeft = index % 2 === 0;
+                const contentHtml = `
+                    <div class="bg-surface-container border border-outline-variant p-6 hover:border-surface-tint transition-all duration-300 hover:glow-green group-hover:crt-flicker">
+                        <span class="font-code-md text-surface-tint text-label-sm">${entry.year}</span>
+                        <h3 class="font-headline-md text-headline-md mt-1 mb-2">${entry.experience} as ${entry.role}</h3>
+                        <p class="text-on-surface-variant line-clamp-2">${entry.desc}</p>
+                    </div>`;
+
+                const entryHtml = `
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between w-full group cursor-pointer" onclick="openModal('${entry.id}')">
+                        ${isLeft ? `
+                        <div class="w-full md:w-[45%] md:text-right order-2 md:order-1 mt-4 md:mt-0">
+                            ${contentHtml}
+                        </div>
+                        <div class="w-full md:w-[45%] order-3"></div>
+                        ` : `
+                        <div class="w-full md:w-[45%] order-2 md:order-1"></div>
+                        <div class="w-full md:w-[45%] order-3 mt-4 md:mt-0">
+                            ${contentHtml}
+                        </div>
+                        `}
+                        <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-8 h-8 flex items-center justify-center bg-surface border-2 ${isLeft ? 'border-surface-tint' : 'border-outline-variant'} rounded-full z-10 order-1 md:order-2 group-hover:border-surface-tint group-hover:scale-125 transition-all">
+                            <div class="w-2 h-2 ${isLeft ? 'bg-surface-tint shadow-[0_0_8px_#34e507]' : 'bg-outline-variant group-hover:bg-surface-tint rounded-full group-hover:shadow-[0_0_8px_#34e507]'} rounded-full"></div>
+                        </div>
+                    </div>`;
+
+                timelineList.insertAdjacentHTML('beforeend', entryHtml);
+            });
+        }
 
         function openModal(id) {
             const data = entryData[id];

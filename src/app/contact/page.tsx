@@ -54,26 +54,26 @@ export default function Contact() {
           <ContactCard
             icon="account_circle"
             label="LinkedIn"
-            handle="/in/alex-rivera"
-            href="https://linkedin.com/in/alex-rivera"
+            handle="/in/danya-damaris"
+            href="https://linkedin.com/in/danya-damaris"
           />
           <ContactCard
             icon="terminal"
             label="GitHub"
-            handle="/arivera-dev"
-            href="https://github.com/arivera-dev"
+            handle="/danyaSoe"
+            href="https://github.com/danyaSoe"
           />
           <ContactCard
             icon="photo_camera"
             label="Instagram"
-            handle="@sys_rivera"
-            href="https://instagram.com/sys_rivera"
+            handle="@damarisdanya"
+            href="https://instagram.com/damarisdanya"
           />
           <ContactCard
             icon="mail"
             label="Email"
-            handle="alex@terminal.sys"
-            href="mailto:alex@terminal.sys"
+            handle="danyasoe@gmail.com"
+            href="mailto:danyasoe@gmail.com"
           />
         </div>
       </section>

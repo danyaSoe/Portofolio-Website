@@ -4,8 +4,8 @@ import Footer from '@/components/Footer';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'ALEX RIVERA | TERMINAL_SYSTEMS',
-  description: 'Computer Science Student • Software Developer • Tech Enthusiast',
+  title: 'DANYA DAMARIS | TERMINAL_SYSTEMS',
+  description: 'Computer Science Student • Tech Enthusiast',
   viewport: 'width=device-width, initial-scale=1',
 };
 
